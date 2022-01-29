@@ -26,38 +26,44 @@ router.post('/', async (req, res) => {
 
     if (req.body.reference) {
         const ref = await User.findOne({referral_id: req.body.reference});
-        req.body.reference = _.pick(ref, ['_id', 'first_name', 'last_name', 
-                            'email', 'referral_id']);
 
         new Fawn.Task().update('users',
          {referral_id: req.body.reference}, {
              // cross-check with mosh if this transaction syntax is correct.
              // The array method I mean...
-             $inc : { 
+             $inc : {
                         number_referred: +1,
                         net_referral_income: +inc_value
                     }
-                     
-         })
+         });
+
+         req.body.reference = _.pick(ref, ['_id', 'first_name', 'last_name',
+                            'email', 'referral_id']);
     }
-    
+
     user = new User(req.body);
     const salt = bcrypt.genSaltSync(10);
 
     user.password = await bcrypt.hashSync(user.password, salt);
-    
+
+    // Store before validating subscription payment
+
+    // Check payment before doing this
+
     const date = new Date();
     date.setMonth(date.getMonth() + 12);
     user.expire_by = date;
 
     // Add remaining fields for verifying email before saving
-        
+
     idGeneration().then(result => {
         const token = user.generateAuthToken();
         res.header('x-auth-token', token)
         .send(result);
     });
-    
+
+
+
 });
 
 async function idGeneration() {
