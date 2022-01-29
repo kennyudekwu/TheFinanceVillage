@@ -31,11 +31,20 @@ email: {
     maxlength: 255
 },
 
-email_token: String,
+email_token: {
+    type: String,
+    required: true
+},
 
-is_verified: Boolean,
+is_verified: {
+    type: Boolean,
+    default: false
+},
 
-is_subscribed: Boolean,
+is_subscribed: {
+    type: Boolean,
+    default: false
+},
 
 phone_number: {
     type: String,
@@ -99,12 +108,8 @@ reference : {
 created_at: {
     type: Date,
     required: true,
-    default: Date.now
+    default: Date.now()
   },
-
-expire_by: {
-    type: Date
-},
 
 package: {
     type: new mongoose.Schema({
@@ -139,8 +144,6 @@ courses: {
 },
 
 video_completion: Boolean,
-
-subscribed: Boolean,
 
 isAdmin: Boolean
 });
