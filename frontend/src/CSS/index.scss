@@ -1,0 +1,383 @@
+@import url(core_stylesheet.css);
+@import url(euclid_stylesheet.css);
+
+$bgColor: #f8f9fa;
+$priColor: #008E97;
+$secColor: #F58220;
+$bookColor: #F9EADE;
+$altColor: #014448;
+$textColor: white;
+$newColor: #F582200D;
+$alttextColor: #00292C;
+$secPadding: 5rem 0 5rem;
+
+@mixin theme($theme: $bgColor) {
+    background: $theme;
+    padding: $secPadding;
+}
+
+@mixin button($btnColor: $priColor) {
+    background-color: $btnColor;
+    width: 150px;
+    height: 50px;
+    color: $textColor;
+    border-radius: 10px;
+}
+
+
+    .navbar{
+        padding: 0 2rem 0 2rem;
+
+        .nav-item{
+            padding: 0 1rem 0 1rem;
+        }
+
+        .login{
+            width: 100px;
+            color: $priColor;
+            border-color: $priColor;
+            border-style: solid 1px;
+            border-radius: 10px;
+        }
+
+        .login:hover{
+            background-color: $priColor;
+            color: $textColor;
+        }
+
+        .signup{
+            @include button($btnColor: $secColor);
+            width: 195px;
+        }
+    }
+
+    .index{
+        overflow-x: hidden;
+        background-color: $bgColor;
+        font-family: 'euclid_circular_bregular';
+        font-size: 14px;
+        text-align: center;
+
+        h1, h2, h3, h4, h5, h6{
+            font-family: 'core_sans_c65_bold';
+        }
+
+        .subHead, .innerHead{
+            padding-top: 1rem;
+            font-family: 'euclid_circular_bmedium';
+        }
+
+        .innerHead{
+            font-size: 24px;
+        }
+
+        .sec1{
+            padding-top: 5rem;
+
+            .sColor{
+                color: $secColor;
+            }
+            .pColor{
+                color: $priColor;
+            }
+            .priBtn{
+                @include button($btnColor: $priColor);
+            }
+            .mainHeader{
+                font-size: 40px;
+            }
+
+            .imgGroup{
+                width: 300px;
+                height: 250px;
+                margin-top: 2rem;
+            }
+        }
+
+        .sec2{
+            background: url(../Img//wave.svg) no-repeat;
+            padding: $secPadding;
+            color: $textColor;
+
+            .sect2{
+                background-color: $priColor;
+                margin-top: -1rem;
+                padding-bottom: 5rem;
+
+                .sec2Left{
+                    text-align: left;
+                }
+
+                .sec2Header{
+                    padding: 5rem 0 5rem;
+                }
+            }
+        }
+
+        .sec3{
+            .sec3H4{
+                font-family: 'core_sans_c45_regular';
+            }
+
+            .secText{
+                margin-top: -3rem;
+                margin-bottom: 5rem;
+            }
+        }
+
+        .sec3, .sec5{
+            @include theme($theme: $bgColor);
+            color: $alttextColor;
+        }
+
+        .sec4{
+            @include theme($theme: $bookColor);
+            color: $alttextColor;
+            padding-top: 0;
+
+            .imgBook{
+                width: 100%;
+                
+                padding-bottom: 3rem;
+            }
+            
+            .sColor{
+                color: $secColor;
+            }
+
+            .secBtn{
+                @include button($btnColor: $secColor);
+                color: $alttextColor !important;
+            }
+        }
+
+        .sec5{
+            .imgFounder{
+                width: 300px;
+            }
+        }
+
+        .sec6{
+            background-color: #008E9740;
+            color: $alttextColor;
+        
+            .sect6{
+                text-align: left;
+            
+                blockquote{
+                    font-family: 'core_sans_c65_bold';
+                    font-size: 15px;
+                    padding: 3rem .5rem 0rem 1rem;
+                }
+
+                .readMore{
+                    padding-top: 1rem;
+                    padding-left: 1rem;
+                    font-size: 12px;
+                }
+
+                .readStudent{
+                    font-family: 'euclid_circular_blight_italic';
+                }
+
+                .readStories{
+                    font-family: 'euclid_circular_bmedium';
+                    color: $priColor;
+                }
+            }
+
+            .imgTest{
+                width: 100%;
+                height: 400px;
+            }
+        }
+
+        .sec7{
+            padding: $secPadding;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 20rem;
+
+            .chatBtn{
+                @include button($btnColor: $priColor);
+            }
+
+            .imgChat{
+                width: 250px;
+                margin-top: -42rem;
+            }
+
+            button a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        .sec8{
+            @include theme($theme: $altColor);
+            color: white;
+            padding-left: 1rem;
+            padding-right: 1rem;
+              
+            .imgG5{
+                width: 250px;
+                padding-bottom: 3rem;
+            }
+
+            .btnJoin{
+                @include button($btnColor: #02B1BC);
+            }
+        }
+
+        footer{
+            @include theme($theme: $newColor);
+            .upFooter{
+                padding-left: 2rem;
+                padding-right: 2rem;
+                padding-bottom: 3rem;
+
+                .mailInput{
+                    height: 50px;
+                    width: 200px;
+                    border-top-left-radius: 50px;
+                    border-bottom-left-radius: 50px;
+                    border-style: none;
+                    background-color: $bookColor;
+                    padding-left: 2rem;
+                }
+
+                .btnInput{
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 50px;
+                    border-style: none;
+                    background-color: $secColor;
+                    height: 50px;
+                    margin-top: -.2rem;
+                    color: $textColor;
+                }
+            }
+
+            .lowFooter{
+                text-align: center;
+
+                .indexLogo{
+                    padding: 3rem 0 3rem;
+                }
+
+                .logos{
+                    padding-top: 2rem;
+                    padding-bottom: 4rem;
+                }
+
+                .lFootrow{
+                    text-align: left;
+                }
+            }
+
+            .footIcon{
+                padding-left: 3rem;
+                margin-top: -2.5rem;
+            }
+
+            .footIcon a{
+                text-decoration: none;
+                color:  $priColor;
+                font-family: 'core_sans_c65_bold';
+            }
+        }
+    }
+
+     @media only screen and (min-width: 768px) {
+            .index{
+                font-size: 16px !important;
+
+                .alignLeft{
+                    text-align: left;
+                }
+            }
+
+            blockquote{
+                font-size: 20px !important;
+                padding: 3rem 3rem 1rem 3rem !important;
+            }
+
+            .readMore{
+                padding-top: 1rem !important;
+                padding-left: 3rem !important;
+                font-size: 16px !important;
+                padding-bottom: 2rem !important;
+            }
+
+            .sect2{
+                margin-top: 4rem !important;
+            }
+
+            .sec7{
+                padding-left: 6rem !important;
+                padding-right: 3rem !important;
+                padding-top: 5rem !important;
+
+                    .imgChat{
+                        margin-top: 0rem !important;
+                    }
+            }
+
+            .sec8{
+                padding-left: 0rem !important;
+                padding-right: 4rem !important;
+            }
+
+            .imgGroup{
+                width: 350px;
+                height: 300px;
+            }
+
+            .imgBook{
+                width: 70% !important;
+                padding-top: 1rem !important;
+                margin-left: -5rem !important;
+            }
+
+            .imgFounder{
+                width: 50% !important;
+            }
+
+            .imgTest{
+                width: 100% !important;
+                height: 100% !important;
+            }
+
+            .imgChat{
+                width: 70% !important;
+            }
+
+            .imgG5{
+                width: 50% !important;
+                padding: 0 !important;
+            }
+
+           
+    }
+
+    @media only screen and (min-width: 1024px) {
+        .mainHeader{
+            font-size: 60px;
+        }
+
+        blockquote{
+            font-size: 30px !important;
+        }
+
+        .imgGroup{
+            width: 500px !important;
+            height: 400px !important;
+        }
+
+        .sect2{
+            margin-top: 8rem !important;
+        } 
+        
+        .mailInput{
+            width: 350px !important;
+        }
+    }
