@@ -221,14 +221,14 @@ const index = () => {
               </div>
               <div className="col-6 col-md-3">
                 <img src={mail} alt="mail_icon" /> 
-                <p className='footIcon'>Contact us at <br />
-                <a href="mailto:thefinancevillage@gmail.com">thefinancevillage@gmail.com</a>
+                <p className='footIcon'>Contact us at <br /> 
+                <a href="mailto:thefinancevillage@gmail.com"> thefinancevillage@gmail.com </a>
                 </p>
               </div>
               <div className="col-0 col-md-3"></div>
               <div className="col-12 col-md-3">
                 <br />
-                <p>© 2000-2021, All Rights Reserved</p>
+                <p className='footerRights'>© 2000-2021, All Rights Reserved</p>
               </div>
             </div>
           </div> 

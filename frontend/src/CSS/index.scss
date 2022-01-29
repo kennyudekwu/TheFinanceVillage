@@ -271,6 +271,7 @@ $secPadding: 5rem 0 5rem;
 
                 .lFootrow{
                     text-align: left;
+                    word-wrap: break-word;
                 }
             }
 
@@ -283,6 +284,10 @@ $secPadding: 5rem 0 5rem;
                 text-decoration: none;
                 color:  $priColor;
                 font-family: 'core_sans_c65_bold';
+            }
+
+            .footerRights{
+                text-align: center;
             }
         }
     }
@@ -381,3 +386,4 @@ $secPadding: 5rem 0 5rem;
             width: 350px !important;
         }
     }
+    

@@ -225,6 +225,7 @@
 }
 .index footer .lowFooter .lFootrow {
   text-align: left;
+  word-wrap: break-word;
 }
 .index footer .footIcon {
   padding-left: 3rem;
@@ -234,6 +235,9 @@
   text-decoration: none;
   color: #008E97;
   font-family: "core_sans_c65_bold";
+}
+.index footer .footerRights {
+  text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
