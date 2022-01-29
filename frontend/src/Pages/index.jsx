@@ -214,21 +214,21 @@ const index = () => {
               <a href=""><img src={ln} alt="linkedin" /></a>
             </div>
             <div className="lFootrow row">
-              <div className="col-12 col-md-3">
+              <div className="col-6 col-md-3">
                 <img src={call} alt="call_icon" /> 
                 <p className='footIcon'> Have a question? <br />
                 <a href="tel:+234 703 491 4491">+234 703 491 4491</a></p>
               </div>
-              <div className="col-12 col-md-3">
+              <div className="col-6 col-md-3">
                 <img src={mail} alt="mail_icon" /> 
-                <p className='footIcon'>Contact us at <br />
-                <a href="mailto:thefinancevillage@gmail.com">thefinancevillage@gmail.com</a>
+                <p className='footIcon'>Contact us at <br /> 
+                <a href="mailto:thefinancevillage@gmail.com"> thefinancevillage@gmail.com </a>
                 </p>
               </div>
               <div className="col-0 col-md-3"></div>
               <div className="col-12 col-md-3">
                 <br />
-                <p>© 2000-2021, All Rights Reserved</p>
+                <p className='footerRights'>© 2000-2021, All Rights Reserved</p>
               </div>
             </div>
           </div> 
