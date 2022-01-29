@@ -1,0 +1,4 @@
+{
+    "jwtPrivateKey": "financeVillage_jwtPrivateKey",
+    "sendGridApitKey": "mailingSecretKey"
+}
