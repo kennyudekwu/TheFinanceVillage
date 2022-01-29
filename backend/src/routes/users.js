@@ -52,10 +52,6 @@ router.post('/register', async (req, res) => {
 
     // Check payment before doing this
 
-    const date = new Date();
-    date.setMonth(date.getMonth() + 12);
-    user.expire_by = date;
-
     // Add remaining fields for verifying email before saving
 
     idGeneration().then(result => {
@@ -63,6 +59,8 @@ router.post('/register', async (req, res) => {
         res.header('x-auth-token', token)
         .send(result);
     });
+
+    const {email, password} = user;
 
 
 
