@@ -1,0 +1,102 @@
+@import url(core_stylesheet.css);
+@import url(euclid_stylesheet.css);
+
+$bgColor: #f8f9fa;
+$priColor: #008E97;
+$secColor: #F58220;
+$bookColor: #F9EADE;
+$altColor: #014448;
+$textColor: white;
+$newColor: #F582200D;
+$alttextColor: #00292C;
+$secPadding: 5rem 0 5rem;
+
+@mixin theme($theme: $bgColor) {
+    background: $theme;
+    padding: $secPadding;
+}
+
+@mixin button($btnColor: $priColor) {
+    background-color: $btnColor;
+    color: $textColor;
+    height: 50px;
+    width: 259px;
+    left: 26.998046875px;
+    top: 356px;
+    border-radius: 10px;
+    padding: 16px, 10px, 16px, 10px;
+}
+
+div.joinus{
+    background-color: white;
+    overflow-x: hidden;
+
+    .container{
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        .col-12.col-md-6{
+            padding-bottom: 7rem;
+        }
+
+        .card{
+            height: 462px;
+            width: 321px;
+            left: 0px;
+            top: 0px;
+            border-radius: 10px;
+        }
+    
+        .card.free{
+            border-color: $priColor;
+    
+            button.btn.signin{
+                @include button($btnColor: $priColor);
+                margin-bottom: 2rem;
+            }
+        }
+    
+        .card.paid{
+            border-color: $secColor;
+            background-color: $bookColor;
+    
+            button.btn.signin{
+                @include button($btnColor: $secColor);
+                margin-bottom: 2rem;
+            }
+        }
+    
+        .card-body{
+            text-align: left;
+        }
+    
+        .card-header{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    
+        .card-header.free{
+            background-color: $priColor;
+            
+        }
+    
+        .card-header.paid{
+            background-color: $secColor;
+        }
+    
+        img.joinusFeatures{
+            padding: .5rem;
+            width: 60%;
+        }
+    
+        img.resourceIcon{
+            width: 100%;
+        }
+    
+        img.webinarIcon{
+            width: 80%;
+        }
+    }
+
+   
+}

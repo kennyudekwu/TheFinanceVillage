@@ -1,0 +1,155 @@
+@import url(core_stylesheet.css);
+@import url(euclid_stylesheet.css);
+.navbar {
+  padding: 0 2rem 0 2rem;
+  background-color: #008E97;
+}
+.navbar .topNav {
+  background-color: #f8f9fa;
+  margin: 0rem -15rem 0 -4rem;
+}
+.navbar .topNav .navbar-brand {
+  margin-right: 6rem;
+  padding-left: 2rem;
+}
+.navbar .topNav .navbar-toggler {
+  margin-right: 10rem;
+  margin-left: 1rem;
+}
+.navbar .collapse.navbar-collapse {
+  text-align: left;
+}
+.navbar .logoNav {
+  height: 100px;
+  width: 100px;
+}
+.navbar .nav-item {
+  padding: 0 1rem 0 1rem;
+}
+.navbar .nav-item .nav-link {
+  color: white;
+}
+.navbar .login {
+  color: white;
+}
+.navbar .login:hover {
+  background-color: #008E97;
+  color: white;
+}
+.navbar .nav-link.signup {
+  color: #F58220;
+}
+.navbar .authLink {
+  font-size: 12px;
+}
+
+.accordion-item {
+  margin: 1rem 0 1rem;
+  border-radius: 10px !important;
+}
+.accordion-item button.accordion-button {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: 100%;
+  background: linear-gradient(90deg, #008E97 1.5%, white 0%);
+  border-radius: 10px !important;
+}
+
+@media screen and (min-width: 375px) {
+  .navbar-toggler {
+    margin-left: 5rem !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .topNav {
+    background-color: #f8f9fa !important;
+    margin: 0rem -15rem 0 -4rem !important;
+  }
+  .topNav .navbar-brand {
+    margin-right: 13rem !important;
+    padding-left: 3rem !important;
+  }
+  .topNav .navbar-toggler {
+    margin-right: 6rem !important;
+    margin-left: 18rem !important;
+  }
+
+  .authLink {
+    font-size: 14px !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  nav.navbar {
+    background-color: #f8f9fa !important;
+  }
+
+  .collapse.navbar-collapse {
+    background-color: #f8f9fa !important;
+  }
+
+  .topNav {
+    margin: 0 !important;
+  }
+  .topNav .navbar-brand {
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .topNav .navbar-toggler {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .login {
+    width: 100px;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    color: #008E97 !important;
+    border-color: #008E97;
+    border-style: solid 1px;
+    border-radius: 10px;
+  }
+
+  .login:hover {
+    background-color: #008E97;
+    color: white;
+  }
+
+  .signup {
+    background-color: #F58220;
+    color: white;
+    height: 50px;
+    width: 169px;
+    left: 103px;
+    top: 457px;
+    border-radius: 10px;
+    padding: 16px, 10px, 16px, 10px;
+    width: 195px;
+    color: white !important;
+  }
+
+  .nav-link {
+    color: black !important;
+  }
+
+  .login.authLink {
+    margin-left: 10rem !important;
+    color: #008E97 !important;
+  }
+
+  .signup.authLink {
+    margin-left: 0.1rem !important;
+    color: white !important;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .login.authLink {
+    margin-left: 20rem !important;
+  }
+
+  .signup.authLink {
+    margin-left: 1rem !important;
+  }
+}
+
+/*# sourceMappingURL=component.css.map */

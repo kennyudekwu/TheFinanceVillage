@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
 import group from '../Img/Group.png'
 import kenny from '../Img/kenny.png'
 import uche from '../Img/uche.png'
@@ -13,16 +14,9 @@ import book from '../Img/book.png'
 import founder from '../Img/founder.png'
 import test from '../Img/testimonial.png'
 import chat from '../Img/chat.png'
-import logo from '../Img/logo.png'
-import fb from '../Img/facebook.png'
-import ig from '../Img/instagram.png'
-import tg from '../Img/telegram.png'
-import wp from '../Img/whatsapp.png'
-import ln from '../Img/linkedin.png'
-import call from '../Img/call.png'
-import mail from '../Img/mail.png'
-
-import '../CSS/output.css'
+import '../CSS/component.css'
+import '../CSS/index.css'
+import { Link } from 'react-router-dom';
 
 const index = () => {
   return <div className='index'>
@@ -37,7 +31,7 @@ const index = () => {
             <p>
               The FINANCE VILLAGE is a private community of individuals set on the journey to learn all about PERSONAL FINANCE.
             </p>
-            <button className="btn priBtn">Join the village</button>
+            <Link to="joinus"><button className="btn priBtn">Join the village</button></Link> 
             </div>
           </div>
           <div className="col-md-6">
@@ -53,7 +47,7 @@ const index = () => {
             <h1 className='sec2Header'>If you are...</h1>
               <div className="row  justify-content-start">
                 <div className="col col-md-4">
-                  <img src={kosi} alt="kosi" />
+                  <img src={kosi} alt="kosi" className='dummyUser'/>
                 </div>
                 <div className='sec2Left col col-md-4'>
                   <p className='innerHead'>like Kosi</p> 
@@ -66,12 +60,12 @@ const index = () => {
                   <p>pen to admitting that some of the most important things you want to achieve in life depend on the income you earn and your current income will not get you there.</p>
                 </div>
                 <div className="col col-md-4">
-                  <img src={uche} alt="uche" />
+                  <img src={uche} alt="uche" className='dummyUser'/>
                 </div>
               </div>
               <div className="row  justify-content-start">  
                 <div className="col col-md-4">
-                  <img src={kenny} alt="kenny" />
+                  <img src={kenny} alt="kenny" className='dummyUser'/>
                 </div>
                 <div className="sec2Left col col-md-4">
                   <p className='innerHead'>or like Kenny</p>
@@ -90,23 +84,23 @@ const index = () => {
                 <h2>You should really check out the Finance Village</h2>
                 <h4 className='sec3H4'>Here’s how we help you </h4>
               </div>
-              <div className="col">
-                <img src={g1} alt="group1" />
+              <div className="col-12 col-md-6 col-lg-3">
+                <img src={g1} alt="group1" className='groupAssets' />
                 <p className='subHead'>Courses taught by experts</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
               </div>
-              <div className="col">
-              <img src={g2} alt="group2" />
+              <div className="col-12 col-md-6 col-lg-3">
+              <img src={g2} alt="group2" className='groupAssets'/>
                 <p className='subHead'>Community of like-minded individuals</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
               </div>
-              <div className="col">
-              <img src={g3} alt="group3" />
+              <div className="col-12 col-md-6 col-lg-3">
+              <img src={g3} alt="group3" className='groupAssets'/>
                 <p className='subHead'>Access to Exclusive Events & Webinars</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
               </div>
-              <div className="col">
-              <img src={g4} alt="group4" />
+              <div className="col-12 col-md-6 col-lg-3">
+              <img src={g4} alt="group4" className='groupAssets'/>
                 <p className='subHead'>Helpful Resources</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
               </div>
@@ -159,7 +153,7 @@ const index = () => {
 
 
         <div className="sec7 row">
-          <div className="col-12 col-md-6 alignLeft">
+          <div className="col-12 col-md-6 alignLeft align-self-center">
               <h2>Need help getting started?</h2>
               <p>Do you have questions or need further clarifications? Send us a message on 
                 whatsapp and we’ll respond as soon as we can </p>
@@ -175,7 +169,7 @@ const index = () => {
           <div className="col-12 col-md-6">
             <img src={g5} alt="group5" className='imgG5'/>
           </div>
-          <div className="col-12 col-md-6 alignLeft">
+          <div className="col-12 col-md-6 alignLeft align-self-center">
             <h1>Our free financial advice   
               for you right now?</h1>
               <p>Join the Finance Village to gain the knowledge you need to manage and
@@ -184,55 +178,7 @@ const index = () => {
           </div>
         </div>
 
-
-        <footer>
-        <div className="upFooter mt-5 container">
-        <div className="row">
-          <div className="col-12 col-sm-6 alignLeft">
-            <h2>Newsletter</h2>
-            <p>Be the first one to know about discounts, offers and events. Unsubscribe whenever you like.</p>
-          </div>
-          <div className="col-12 col-sm-6">
-            <form action="" method="post">
-              <input type="email" name="" id="" placeholder='Enter your email' className='mailInput'/>
-              <button className='Submit btn btnInput'>Submit</button>
-            </form>
-          </div>
-        </div>
-        </div>
-
-        <hr className='bg-danger'/>
-
-          <div className="lowFooter container">
-            <img src={logo} alt="logo" className='indexLogo'/>
-            <p>We ara a lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud equip ex ea commodo consequat... Read More</p>
-            <div className='logos'>
-              <a href=""><img src={fb} alt="facebook"/></a>
-              <a href=""><img src={tg} alt="telegram" className='px-4'/></a>
-              <a href=""><img src={wp} alt="whatsapp" /></a>
-              <a href=""><img src={ig} alt="instagram" className='px-4'/></a>
-              <a href=""><img src={ln} alt="linkedin" /></a>
-            </div>
-            <div className="lFootrow row">
-              <div className="col-6 col-md-3">
-                <img src={call} alt="call_icon" /> 
-                <p className='footIcon'> Have a question? <br />
-                <a href="tel:+234 703 491 4491">+234 703 491 4491</a></p>
-              </div>
-              <div className="col-6 col-md-3">
-                <img src={mail} alt="mail_icon" /> 
-                <p className='footIcon'>Contact us at <br /> 
-                <a href="mailto:thefinancevillage@gmail.com"> thefinancevillage@gmail.com </a>
-                </p>
-              </div>
-              <div className="col-0 col-md-3"></div>
-              <div className="col-12 col-md-3">
-                <br />
-                <p className='footerRights'>© 2000-2021, All Rights Reserved</p>
-              </div>
-            </div>
-          </div> 
-        </footer>    
+        <Footer />
 
       </div>;
 };

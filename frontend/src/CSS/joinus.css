@@ -1,0 +1,74 @@
+@import url(core_stylesheet.css);
+@import url(euclid_stylesheet.css);
+div.joinus {
+  background-color: white;
+  overflow-x: hidden;
+}
+div.joinus .container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+div.joinus .container .col-12.col-md-6 {
+  padding-bottom: 7rem;
+}
+div.joinus .container .card {
+  height: 462px;
+  width: 321px;
+  left: 0px;
+  top: 0px;
+  border-radius: 10px;
+}
+div.joinus .container .card.free {
+  border-color: #008E97;
+}
+div.joinus .container .card.free button.btn.signin {
+  background-color: #008E97;
+  color: white;
+  height: 50px;
+  width: 259px;
+  left: 26.998046875px;
+  top: 356px;
+  border-radius: 10px;
+  padding: 16px, 10px, 16px, 10px;
+  margin-bottom: 2rem;
+}
+div.joinus .container .card.paid {
+  border-color: #F58220;
+  background-color: #F9EADE;
+}
+div.joinus .container .card.paid button.btn.signin {
+  background-color: #F58220;
+  color: white;
+  height: 50px;
+  width: 259px;
+  left: 26.998046875px;
+  top: 356px;
+  border-radius: 10px;
+  padding: 16px, 10px, 16px, 10px;
+  margin-bottom: 2rem;
+}
+div.joinus .container .card-body {
+  text-align: left;
+}
+div.joinus .container .card-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+div.joinus .container .card-header.free {
+  background-color: #008E97;
+}
+div.joinus .container .card-header.paid {
+  background-color: #F58220;
+}
+div.joinus .container img.joinusFeatures {
+  padding: 0.5rem;
+  width: 60%;
+}
+div.joinus .container img.resourceIcon {
+  width: 100%;
+}
+div.joinus .container img.webinarIcon {
+  width: 80%;
+}
+
+/*# sourceMappingURL=joinus.css.map */
