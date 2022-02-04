@@ -1,37 +1,12 @@
 @import url(core_stylesheet.css);
 @import url(euclid_stylesheet.css);
-.navbar {
-  padding: 0 2rem 0 2rem;
-}
-.navbar .nav-item {
-  padding: 0 1rem 0 1rem;
-}
-.navbar .login {
-  width: 100px;
-  color: #008E97;
-  border-color: #008E97;
-  border-style: solid 1px;
-  border-radius: 10px;
-}
-.navbar .login:hover {
-  background-color: #008E97;
-  color: white;
-}
-.navbar .signup {
-  background-color: #F58220;
-  width: 150px;
-  height: 50px;
-  color: white;
-  border-radius: 10px;
-  width: 195px;
-}
-
 .index {
   overflow-x: hidden;
   background-color: #f8f9fa;
   font-family: "euclid_circular_bregular";
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
+  word-spacing: 3px;
 }
 .index h1, .index h2, .index h3, .index h4, .index h5, .index h6 {
   font-family: "core_sans_c65_bold";
@@ -40,8 +15,11 @@
   padding-top: 1rem;
   font-family: "euclid_circular_bmedium";
 }
+.index .subHead {
+  font-size: 14px;
+}
 .index .innerHead {
-  font-size: 24px;
+  font-size: 16px;
 }
 .index .sec1 {
   padding-top: 5rem;
@@ -54,10 +32,13 @@
 }
 .index .sec1 .priBtn {
   background-color: #008E97;
-  width: 150px;
-  height: 50px;
   color: white;
+  height: 50px;
+  width: 169px;
+  left: 103px;
+  top: 457px;
   border-radius: 10px;
+  padding: 16px, 10px, 16px, 10px;
 }
 .index .sec1 .mainHeader {
   font-size: 40px;
@@ -68,7 +49,7 @@
   margin-top: 2rem;
 }
 .index .sec2 {
-  background: url(../Img//wave.svg) no-repeat;
+  background: url(../Img/wave.svg) no-repeat;
   padding: 5rem 0 5rem;
   color: white;
 }
@@ -83,12 +64,27 @@
 .index .sec2 .sect2 .sec2Header {
   padding: 5rem 0 5rem;
 }
+.index .sec2 .sect2 .dummyUser {
+  height: 99px;
+  width: 99px;
+  left: 20px;
+  top: 1455px;
+  border-radius: 404px;
+}
 .index .sec3 .sec3H4 {
   font-family: "core_sans_c45_regular";
+  color: #00292CBF;
 }
 .index .sec3 .secText {
   margin-top: -3rem;
   margin-bottom: 5rem;
+}
+.index .sec3 .groupAssets {
+  height: 110px;
+  width: 110px;
+  left: 82px;
+  top: 265px;
+  border-radius: 0px;
 }
 .index .sec3, .index .sec5 {
   background: #f8f9fa;
@@ -100,21 +96,25 @@
   padding: 5rem 0 5rem;
   color: #00292C;
   padding-top: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .index .sec4 .imgBook {
   width: 100%;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 .index .sec4 .sColor {
   color: #F58220;
 }
 .index .sec4 .secBtn {
   background-color: #F58220;
-  width: 150px;
-  height: 50px;
   color: white;
+  height: 50px;
+  width: 169px;
+  left: 103px;
+  top: 457px;
   border-radius: 10px;
-  color: #00292C !important;
+  padding: 16px, 10px, 16px, 10px;
 }
 .index .sec5 .imgFounder {
   width: 300px;
@@ -155,10 +155,13 @@
 }
 .index .sec7 .chatBtn {
   background-color: #008E97;
-  width: 150px;
-  height: 50px;
   color: white;
+  height: 50px;
+  width: 169px;
+  left: 103px;
+  top: 457px;
   border-radius: 10px;
+  padding: 16px, 10px, 16px, 10px;
 }
 .index .sec7 .imgChat {
   width: 250px;
@@ -181,10 +184,13 @@
 }
 .index .sec8 .btnJoin {
   background-color: #02B1BC;
-  width: 150px;
-  height: 50px;
   color: white;
+  height: 50px;
+  width: 169px;
+  left: 103px;
+  top: 457px;
   border-radius: 10px;
+  padding: 16px, 10px, 16px, 10px;
 }
 .index footer {
   background: #F582200D;
@@ -213,11 +219,17 @@
   margin-top: -0.2rem;
   color: white;
 }
+.index footer .upFooter .mailInput:focus {
+  outline: none !important;
+  border: 1px solid #719ECE;
+  box-shadow: 0 0 5px #719ECE;
+}
 .index footer .lowFooter {
   text-align: center;
 }
 .index footer .lowFooter .indexLogo {
-  padding: 3rem 0 3rem;
+  height: 100px;
+  width: 100px;
 }
 .index footer .lowFooter .logos {
   padding-top: 2rem;
@@ -242,10 +254,23 @@
 
 @media only screen and (min-width: 768px) {
   .index {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
   .index .alignLeft {
     text-align: left;
+  }
+
+  .indexLogo {
+    height: 200px !important;
+    width: 200px !important;
+  }
+
+  .subHead {
+    font-size: 16px !important;
+  }
+
+  .innerHead {
+    font-size: 24px !important;
   }
 
   blockquote {
@@ -262,6 +287,14 @@
 
   .sect2 {
     margin-top: 4rem !important;
+  }
+
+  .groupAssets {
+    height: 139px;
+    width: 139px;
+    left: 812px;
+    top: 2057px;
+    border-radius: 0px;
   }
 
   .sec7 {
@@ -283,9 +316,13 @@
     height: 300px;
   }
 
-  .imgBook {
-    width: 70% !important;
-    padding-top: 1rem !important;
+  .sec4 {
+    padding-bottom: 0 !important;
+  }
+  .sec4 .imgBook {
+    width: 100% !important;
+    height: max-content !important;
+    padding-bottom: 0 !important;
     margin-left: -5rem !important;
   }
 
@@ -303,13 +340,24 @@
   }
 
   .imgG5 {
-    width: 50% !important;
+    height: 386px !important;
+    width: 386px !important;
+    left: 190.625px !important;
+    top: 4941px !important;
     padding: 0 !important;
+  }
+
+  .dummyUser {
+    height: 197px !important;
+    width: 197px !important;
+    left: 205px !important;
+    top: 1046px !important;
+    border-radius: 268.5px !important;
   }
 }
 @media only screen and (min-width: 1024px) {
   .mainHeader {
-    font-size: 60px;
+    font-size: 60px !important;
   }
 
   blockquote {
@@ -330,4 +378,4 @@
   }
 }
 
-/*# sourceMappingURL=output.css.map */
+/*# sourceMappingURL=index.css.map */
