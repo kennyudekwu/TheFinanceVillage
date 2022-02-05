@@ -228,74 +228,6 @@ $secPadding: 5rem 0 5rem;
             }
         }
 
-        footer{
-            @include theme($theme: $newColor);
-            .upFooter{
-                padding-left: 2rem;
-                padding-right: 2rem;
-                padding-bottom: 3rem;
-
-                .mailInput{
-                    height: 50px;
-                    width: 200px;
-                    border-top-left-radius: 50px;
-                    border-bottom-left-radius: 50px;
-                    border-style: none;
-                    background-color: $bookColor;
-                    padding-left: 2rem;
-                }
-
-                .btnInput{
-                    border-top-right-radius: 50px;
-                    border-bottom-right-radius: 50px;
-                    border-style: none;
-                    background-color: $secColor;
-                    height: 50px;
-                    margin-top: -.2rem;
-                    color: $textColor;
-                }
-
-                .mailInput:focus {
-                    outline: none !important;
-                    border:1px solid #719ECE;
-                    box-shadow: 0 0 5px #719ECE;
-                }
-            }
-
-            .lowFooter{
-                text-align: center;
-
-                .indexLogo{
-                    height: 100px;
-                    width: 100px;
-                }
-
-                .logos{
-                    padding-top: 2rem;
-                    padding-bottom: 4rem;
-                }
-
-                .lFootrow{
-                    text-align: left;
-                    word-wrap: break-word;
-                }
-            }
-
-            .footIcon{
-                padding-left: 3rem;
-                margin-top: -2.5rem;
-            }
-
-            .footIcon a{
-                text-decoration: none;
-                color:  $priColor;
-                font-family: 'core_sans_c65_bold';
-            }
-
-            .footerRights{
-                text-align: center;
-            }
-        }
     }
 
      @media only screen and (min-width: 768px) {
@@ -428,4 +360,3 @@ $secPadding: 5rem 0 5rem;
             width: 350px !important;
         }
     }
-    

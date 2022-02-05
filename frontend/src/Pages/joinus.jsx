@@ -20,16 +20,17 @@ const joinus = () => {
       <div className="container">
         <div className="my-5">
           <h2>Our Packages</h2>
-          <p>Whether you’re still trying to decide or you are ready to kickstart your journey to financial success, we have something for you</p>
+          <p>Whether you’re still trying to decide or you are ready to kickstart your journey <br /> to financial success, we have something for you</p>
         </div>
         
+        <center>
           <div className="row">
               <div className="col-12 col-md-6">
                 <div class="card free">
-                <h5 class="card-header free"></h5>
+                <h2 class="card-header free"></h2>
                 <div class="card-body">
-                <h5 class="card-title">$ 0.00 /year </h5>
-                <h4>Free Membership</h4>
+                <h2 class="card-title">$ 0.00 <span> /year</span></h2>
+                <h5>Free Membership</h5>
                 <p class="card-text">All the basics to start your journey</p>
 
                 <div className="features">
@@ -47,10 +48,10 @@ const joinus = () => {
 
               <div className="col-12 col-md-6">
                 <div class="card paid">
-                <h5 class="card-header paid"></h5>
+                <h2 class="card-header paid"></h2>
                 <div class="card-body">
-                <h5 class="card-title">$ 0.00 /year </h5>
-                <h4>Free Membership</h4>
+                <h2 class="card-title">$ 50.00 <span> /year</span></h2>
+                <h5>Premium Membership</h5>
                 <p class="card-text">All the basics to start your journey</p>
 
                 <div className="features">
@@ -66,13 +67,17 @@ const joinus = () => {
                 </div>
               </div>  
           </div>
+        </center> 
 
-          <div>
-            <p>Frequently Asked Questions</p>
+          <div className='mb-5'>
+            <h2>Frequently Asked Questions</h2>
           </div>
-          <Accordion />
+
+          <div className='accordion'>
+            <Accordion />
+          </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

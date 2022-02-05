@@ -192,65 +192,6 @@
   border-radius: 10px;
   padding: 16px, 10px, 16px, 10px;
 }
-.index footer {
-  background: #F582200D;
-  padding: 5rem 0 5rem;
-}
-.index footer .upFooter {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 3rem;
-}
-.index footer .upFooter .mailInput {
-  height: 50px;
-  width: 200px;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-style: none;
-  background-color: #F9EADE;
-  padding-left: 2rem;
-}
-.index footer .upFooter .btnInput {
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-style: none;
-  background-color: #F58220;
-  height: 50px;
-  margin-top: -0.2rem;
-  color: white;
-}
-.index footer .upFooter .mailInput:focus {
-  outline: none !important;
-  border: 1px solid #719ECE;
-  box-shadow: 0 0 5px #719ECE;
-}
-.index footer .lowFooter {
-  text-align: center;
-}
-.index footer .lowFooter .indexLogo {
-  height: 100px;
-  width: 100px;
-}
-.index footer .lowFooter .logos {
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-}
-.index footer .lowFooter .lFootrow {
-  text-align: left;
-  word-wrap: break-word;
-}
-.index footer .footIcon {
-  padding-left: 3rem;
-  margin-top: -2.5rem;
-}
-.index footer .footIcon a {
-  text-decoration: none;
-  color: #008E97;
-  font-family: "core_sans_c65_bold";
-}
-.index footer .footerRights {
-  text-align: center;
-}
 
 @media only screen and (min-width: 768px) {
   .index {
