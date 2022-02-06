@@ -55,13 +55,92 @@
   background: linear-gradient(90deg, #008E97 1.5%, white 0%);
   border-radius: 10px !important;
 }
+.accordion-item .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+  transform: scale(0.75) !important;
+}
+.accordion-item .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+}
+
+footer {
+  background: #F582200D;
+  padding: 5rem 0 5rem;
+}
+footer .upFooter {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
+}
+footer .upFooter .col-12.col-sm-6.alignLeft {
+  text-align: center;
+}
+footer .upFooter .mailInput {
+  height: 50px;
+  width: 200px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-style: none;
+  background-color: #F9EADE;
+  padding-left: 2rem;
+}
+footer .upFooter .btnInput {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-style: none;
+  background-color: #F58220;
+  height: 50px;
+  margin-top: -0.2rem;
+  color: white;
+}
+footer .upFooter .mailInput:focus {
+  outline: none !important;
+  border: 1px solid #719ECE;
+  box-shadow: 0 0 5px #719ECE;
+}
+footer .lowFooter {
+  text-align: center;
+}
+footer .lowFooter .indexLogo {
+  height: 100px;
+  width: 100px;
+}
+footer .lowFooter .logos {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+footer .lowFooter .lFootrow {
+  text-align: left;
+  word-wrap: break-word;
+}
+footer .footIcon {
+  padding-left: 3rem;
+  margin-top: -2.5rem;
+}
+footer .footIcon a {
+  text-decoration: none;
+  color: #008E97;
+  font-family: "core_sans_c65_bold";
+}
+footer .footerRights {
+  text-align: center;
+}
 
 @media screen and (min-width: 375px) {
   .navbar-toggler {
     margin-left: 5rem !important;
   }
 }
+@media screen and (min-width: 425px) {
+  .navbar-toggler {
+    margin-left: 8rem !important;
+  }
+}
 @media screen and (min-width: 768px) {
+  .col-12.col-sm-6.alignLeft {
+    text-align: left !important;
+  }
+
   .topNav {
     background-color: #f8f9fa !important;
     margin: 0rem -15rem 0 -4rem !important;
@@ -77,6 +156,20 @@
 
   .authLink {
     font-size: 14px !important;
+  }
+}
+@media screen and (min-width: 820px) {
+  .topNav {
+    background-color: #f8f9fa !important;
+    margin: 0rem -15rem 0 -3rem !important;
+  }
+  .topNav .navbar-brand {
+    margin-right: 18rem !important;
+    padding-left: 3rem !important;
+  }
+  .topNav .navbar-toggler {
+    margin-right: 7rem !important;
+    margin-left: 20rem !important;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -133,13 +226,18 @@
   }
 
   .login.authLink {
-    margin-left: 10rem !important;
+    margin-left: 3rem !important;
     color: #008E97 !important;
   }
 
   .signup.authLink {
     margin-left: 0.1rem !important;
     color: white !important;
+  }
+}
+@media screen and (min-width: 1110px) {
+  .login.authLink {
+    margin-left: 10rem !important;
   }
 }
 @media screen and (min-width: 1440px) {

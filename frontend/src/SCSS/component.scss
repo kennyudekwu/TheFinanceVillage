@@ -81,8 +81,6 @@ $secPadding: 5rem 0 5rem;
     }
 }
 
-
-
 .accordion-item{
     margin: 1rem 0 1rem;
     border-radius: 10px !important;
@@ -96,7 +94,89 @@ $secPadding: 5rem 0 5rem;
         border-radius: 10px !important;
     }
 
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(0.75) !important;
+    }
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+
 }
+
+footer{
+    @include theme($theme: $newColor);
+    .upFooter{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 3rem;
+
+        .col-12.col-sm-6.alignLeft{
+            text-align: center;
+        }
+
+        .mailInput{
+            height: 50px;
+            width: 200px;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-style: none;
+            background-color: $bookColor;
+            padding-left: 2rem;
+        }
+
+        .btnInput{
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-style: none;
+            background-color: $secColor;
+            height: 50px;
+            margin-top: -.2rem;
+            color: $textColor;
+        }
+
+        .mailInput:focus {
+            outline: none !important;
+            border:1px solid #719ECE;
+            box-shadow: 0 0 5px #719ECE;
+        }
+    }
+
+    .lowFooter{
+        text-align: center;
+
+        .indexLogo{
+            height: 100px;
+            width: 100px;
+        }
+
+        .logos{
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .lFootrow{
+            text-align: left;
+            word-wrap: break-word;
+        }
+    }
+
+    .footIcon{
+        padding-left: 3rem;
+        margin-top: -2.5rem;
+    }
+
+    .footIcon a{
+        text-decoration: none;
+        color:  $priColor;
+        font-family: 'core_sans_c65_bold';
+    }
+
+    .footerRights{
+        text-align: center;
+    }
+}
+
 
 @media screen and (min-width: 375px){
     .navbar-toggler{
@@ -104,7 +184,17 @@ $secPadding: 5rem 0 5rem;
     }
 }
 
+@media screen and (min-width: 425px){
+    .navbar-toggler{
+        margin-left: 8rem !important;
+    }
+}
+
 @media screen and (min-width: 768px) {
+    .col-12.col-sm-6.alignLeft{
+        text-align: left !important;
+    }
+
     .topNav{
         background-color: $bgColor !important;
         margin: 0rem -15rem 0 -4rem !important;
@@ -122,6 +212,24 @@ $secPadding: 5rem 0 5rem;
 
     .authLink{
         font-size: 14px !important;
+    }
+}
+
+@media screen and (min-width: 820px) {
+
+    .topNav{
+        background-color: $bgColor !important;
+        margin: 0rem -15rem 0 -3rem !important;
+
+        .navbar-brand{
+            margin-right: 18rem !important;
+            padding-left: 3rem !important;
+        }
+
+        .navbar-toggler{
+            margin-right: 7rem !important;
+            margin-left: 20rem !important;
+        }
     }
 }
 
@@ -174,13 +282,19 @@ $secPadding: 5rem 0 5rem;
     }
 
     .login.authLink{
-        margin-left: 10rem !important;
+        margin-left: 3rem !important;
         color: $priColor !important;
     }
 
     .signup.authLink{
         margin-left: .1rem !important;
         color: $textColor !important;
+    }
+}
+
+@media screen and (min-width: 1110px) {
+    .login.authLink{
+        margin-left: 10rem !important;
     }
 }
 
