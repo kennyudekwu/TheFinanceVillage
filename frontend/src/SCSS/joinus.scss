@@ -52,11 +52,30 @@ div.joinus{
             left: 0px;
             top: 0px;
             border-radius: 10px;
+            border-top: 5px solid; 
+            padding-top: 38px;
+
+
+            h5{
+                font-size: 16px;
+                line-height: 16px;
+                margin-bottom: 5px;
+            }
         }
     
         .card-title span{
-            font-size: 16px;
+            font-size: 12px !important;
+            font-weight: 400 !important;
             color: #00292CA6;
+        }
+
+        .card-text{
+            color: rgba(0, 41, 44, 0.65);
+        }
+
+        .card-content{
+            padding-left: 1rem;
+            padding-bottom: 1rem;
         }
 
         .card.free{
@@ -85,15 +104,6 @@ div.joinus{
         .card-header{
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
-        }
-    
-        .card-header.free{
-            background-color: $priColor;
-            
-        }
-    
-        .card-header.paid{
-            background-color: $secColor;
         }
     
         img.joinusFeatures{

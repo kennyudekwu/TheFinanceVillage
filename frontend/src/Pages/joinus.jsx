@@ -27,11 +27,12 @@ const joinus = () => {
           <div className="row">
               <div className="col-12 col-md-6">
                 <div class="card free">
-                <h2 class="card-header free"></h2>
                 <div class="card-body">
+                <div className="card-content">
                 <h2 class="card-title">$ 0.00 <span> /year</span></h2>
                 <h5>Free Membership</h5>
                 <p class="card-text">All the basics to start your journey</p>
+                </div>
 
                 <div className="features">
                   <img className='joinusFeatures' src={freecourse} alt="" />
@@ -48,12 +49,12 @@ const joinus = () => {
 
               <div className="col-12 col-md-6">
                 <div class="card paid">
-                <h2 class="card-header paid"></h2>
                 <div class="card-body">
+                <div className="card-content">
                 <h2 class="card-title">$ 50.00 <span> /year</span></h2>
                 <h5>Premium Membership</h5>
                 <p class="card-text">All the basics to start your journey</p>
-
+                </div>
                 <div className="features">
                   <img className='joinusFeatures' src={freecourse} alt="" />
                   <img className='joinusFeatures webinarIcon' src={paidwebinar} alt="" />

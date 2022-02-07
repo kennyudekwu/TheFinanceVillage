@@ -51,8 +51,8 @@ $secPadding: 5rem 0 5rem;
     }
 
     .logoNav{
-        height: 100px;
-        width: 100px;
+        height: 130px;
+        width: 130px;
     }
 
     .nav-item{
@@ -82,16 +82,40 @@ $secPadding: 5rem 0 5rem;
 }
 
 .accordion-item{
-    margin: 1rem 0 1rem;
-    border-radius: 10px !important;
+    // margin: 1rem 0 1rem;
+    border-radius: 10px!important;
+    margin: 1rem 0;
+    border-left: 5px #008e97  solid;
 
     button.accordion-button{
         padding-left: 2rem;
         padding-top: 2rem;
         padding-bottom: 2rem;
         height: 100%;
-        background: linear-gradient(90deg, #008E97 1.5%, white 0%);
         border-radius: 10px !important;
+    }
+
+    .accordion-item button.accordion-button {
+        height: 100%;
+        padding-bottom: 2rem;
+        padding-left: 2rem;
+        padding-top: 2rem;
+    }
+
+    .accordion-body{
+        text-align: left;
+        font-size: 16px;
+        line-height: 23px;
+        color: rgba(148, 162, 171, 1);
+    }
+
+    .accordion-button:focus {
+        outline: 0;
+        box-shadow: none;
+    }    
+
+    .accordion-button:not(.collapsed){
+        color: black;
     }
 
     .accordion-button::after {
@@ -107,8 +131,8 @@ $secPadding: 5rem 0 5rem;
 footer{
     @include theme($theme: $newColor);
     .upFooter{
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;  
         padding-bottom: 3rem;
 
         .col-12.col-sm-6.alignLeft{
@@ -133,6 +157,7 @@ footer{
             height: 50px;
             margin-top: -.2rem;
             color: $textColor;
+            font-size: 12px;
         }
 
         .mailInput:focus {
@@ -144,6 +169,11 @@ footer{
 
     .lowFooter{
         text-align: center;
+
+        .lowFooter_paragraph{
+            padding-left: 50px;
+            padding-right: 50px;
+        }
 
         .indexLogo{
             height: 100px;
@@ -170,6 +200,7 @@ footer{
         text-decoration: none;
         color:  $priColor;
         font-family: 'core_sans_c65_bold';
+        font-weight: 700;
     }
 
     .footerRights{
@@ -191,27 +222,34 @@ footer{
 }
 
 @media screen and (min-width: 768px) {
-    .col-12.col-sm-6.alignLeft{
-        text-align: left !important;
-    }
-
-    .topNav{
-        background-color: $bgColor !important;
-        margin: 0rem -15rem 0 -4rem !important;
-
-        .navbar-brand{
-            margin-right: 13rem !important;
-            padding-left: 3rem !important;
+    .navbar{
+        .topNav{
+            background-color: $bgColor !important;
+            margin: 0rem -15rem 0 -4rem;
+    
+            .navbar-brand{
+                margin-right: 13rem !important;
+                padding-left: 3rem !important;
+            }
+    
+            .navbar-toggler{
+                margin-right: 6rem !important;
+                margin-left: 18rem !important;
+            }
         }
 
-        .navbar-toggler{
-            margin-right: 6rem !important;
-            margin-left: 18rem !important;
+        .authLink{
+            font-size: 14px !important;
         }
     }
 
-    .authLink{
-        font-size: 14px !important;
+    footer{
+        padding-left: 70px;
+        padding-right: 70px;
+
+        .col-12.col-sm-6.alignLeft{
+            text-align: left !important;
+        }
     }
 }
 
@@ -223,7 +261,7 @@ footer{
 
         .navbar-brand{
             margin-right: 18rem !important;
-            padding-left: 3rem !important;
+            padding-left: 5rem !important;
         }
 
         .navbar-toggler{
@@ -234,67 +272,83 @@ footer{
 }
 
 @media screen and (min-width: 1024px) {
-    nav.navbar{
+    .navbar{
         background-color: $bgColor !important;
-    }
-
-    .collapse.navbar-collapse{
-        background-color: $bgColor !important;
-    }
-
-    .topNav{
-        margin: 0 !important;
-
-        .navbar-brand{
-            margin-right: 0 !important;
-            padding-left: 0 !important;
+    
+        .collapse.navbar-collapse{
+            background-color: $bgColor !important;
+        }
+    
+        .topNav{
+            margin: 0 !important;
+    
+            .navbar-brand{
+                margin-right: 0 !important;
+                padding-left: 0 !important;
+            }
+    
+            .navbar-toggler{
+                margin-right: 0 !important;
+                margin-left: 0 !important;
+            }
+        }
+    
+        .login{
+            width: 100px;
+            padding-top: 12.5px;
+            padding-bottom: 12.5px;
+            color: $priColor !important;
+            border-color: $priColor;
+            border-style: solid 1px;
+            border-radius: 10px;
+        }
+    
+        .signup{
+            @include button($btnColor: $secColor);
+            width: 195px;
+            color: $textColor !important;
+        }
+    
+        .nav-link{
+            color: black !important;
+        }
+    
+        .login.authLink{
+            margin-left: 1rem;
+            color: $priColor !important;
         }
 
-        .navbar-toggler{
-            margin-right: 0 !important;
-            margin-left: 0 !important;
+        .login.authLink:hover{
+            background-color: $priColor !important;
+            color: $textColor !important;
+        }
+    
+        .signup.authLink{
+            margin-left: .1rem !important;
+            color: $textColor !important;
         }
     }
 
-    .login{
-        width: 100px;
-        padding-top: 12.5px;
-        padding-bottom: 12.5px;
-        color: $priColor !important;
-        border-color: $priColor;
-        border-style: solid 1px;
-        border-radius: 10px;
-    }
+    footer{
+        .upFooter{
+            padding-left: 100px !important;
+            padding-right: 100px !important;  
+        }
 
-    .login:hover{
-        background-color: $priColor;
-        color: $textColor;
-    }
-
-    .signup{
-        @include button($btnColor: $secColor);
-        width: 195px;
-        color: $textColor !important;
-    }
-
-    .nav-link{
-        color: black !important;
-    }
-
-    .login.authLink{
-        margin-left: 3rem !important;
-        color: $priColor !important;
-    }
-
-    .signup.authLink{
-        margin-left: .1rem !important;
-        color: $textColor !important;
+        .mailInput{
+            width: 260px !important;
+        }
+    
+        .lowFooter_paragraph{
+            padding-left: 175px !important;
+            padding-right: 175px !important;
+        }
     }
 }
 
 @media screen and (min-width: 1110px) {
     .login.authLink{
-        margin-left: 10rem !important;
+        margin-left: 12rem !important;
     }
 }
 

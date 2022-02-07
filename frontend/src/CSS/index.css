@@ -39,14 +39,16 @@
   top: 457px;
   border-radius: 10px;
   padding: 16px, 10px, 16px, 10px;
+  font-size: 14px;
 }
 .index .sec1 .mainHeader {
   font-size: 40px;
+  line-height: 60px;
 }
 .index .sec1 .imgGroup {
-  width: 300px;
-  height: 250px;
+  height: auto;
   margin-top: 2rem;
+  width: 100%;
 }
 .index .sec2 {
   background: url(../Img/wave.svg) no-repeat;
@@ -72,8 +74,11 @@
   border-radius: 404px;
 }
 .index .sec3 .sec3H4 {
-  font-family: "core_sans_c45_regular";
+  font-family: "euclid_circular_bregular";
   color: #00292CBF;
+}
+.index .sec3 .subHead_paragraph {
+  padding: 0px 5px;
 }
 .index .sec3 .secText {
   margin-top: -3rem;
@@ -115,6 +120,7 @@
   top: 457px;
   border-radius: 10px;
   padding: 16px, 10px, 16px, 10px;
+  font-size: 14px;
 }
 .index .sec5 .imgFounder {
   width: 300px;
@@ -138,9 +144,12 @@
 }
 .index .sec6 .sect6 .readStudent {
   font-family: "euclid_circular_blight_italic";
+  font-weight: 600;
 }
 .index .sec6 .sect6 .readStories {
   font-family: "euclid_circular_bmedium";
+  font-weight: 600;
+  font-size: 14px;
   color: #008E97;
 }
 .index .sec6 .imgTest {
@@ -162,6 +171,8 @@
   top: 457px;
   border-radius: 10px;
   padding: 16px, 10px, 16px, 10px;
+  font-size: 14px;
+  margin-top: 32px;
 }
 .index .sec7 .imgChat {
   width: 250px;
@@ -191,6 +202,8 @@
   top: 457px;
   border-radius: 10px;
   padding: 16px, 10px, 16px, 10px;
+  font-size: 14px;
+  margin-top: 32px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -239,7 +252,7 @@
   }
 
   .sec7 {
-    padding-left: 6rem !important;
+    padding-left: 110px !important;
     padding-right: 3rem !important;
     padding-top: 5rem !important;
   }
@@ -248,13 +261,12 @@
   }
 
   .sec8 {
-    padding-left: 0rem !important;
+    padding-left: 1rem !important;
     padding-right: 4rem !important;
   }
-
-  .imgGroup {
-    width: 350px;
-    height: 300px;
+  .sec8 .imgG5 {
+    width: 350px !important;
+    height: 300px !important;
   }
 
   .sec4 {
@@ -305,17 +317,21 @@
     font-size: 30px !important;
   }
 
-  .imgGroup {
-    width: 500px !important;
-    height: 400px !important;
-  }
-
   .sect2 {
     margin-top: 8rem !important;
   }
 
   .mailInput {
     width: 350px !important;
+  }
+
+  .sec8 {
+    padding-right: 140px !important;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  blockquote {
+    font-size: 40px !important;
   }
 }
 
