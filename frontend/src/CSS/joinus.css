@@ -23,10 +23,25 @@ div.joinus .container .card {
   left: 0px;
   top: 0px;
   border-radius: 10px;
+  border-top: 5px solid;
+  padding-top: 38px;
+}
+div.joinus .container .card h5 {
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 5px;
 }
 div.joinus .container .card-title span {
-  font-size: 16px;
+  font-size: 12px !important;
+  font-weight: 400 !important;
   color: #00292CA6;
+}
+div.joinus .container .card-text {
+  color: rgba(0, 41, 44, 0.65);
+}
+div.joinus .container .card-content {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
 }
 div.joinus .container .card.free {
   border-color: #008E97;
@@ -63,12 +78,6 @@ div.joinus .container .card-body {
 div.joinus .container .card-header {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-}
-div.joinus .container .card-header.free {
-  background-color: #008E97;
-}
-div.joinus .container .card-header.paid {
-  background-color: #F58220;
 }
 div.joinus .container img.joinusFeatures {
   padding: 0.5rem;

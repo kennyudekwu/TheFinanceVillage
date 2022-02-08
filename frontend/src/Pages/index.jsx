@@ -14,6 +14,7 @@ import book from '../Img/book.png'
 import founder from '../Img/founder.png'
 import test from '../Img/testimonial.png'
 import chat from '../Img/chat.png'
+import arrow from '../Img/arrow-right.svg'
 import '../CSS/component.css'
 import '../CSS/index.css'
 import { Link } from 'react-router-dom';
@@ -87,22 +88,22 @@ const index = () => {
               <div className="col-12 col-md-6 col-lg-3">
                 <img src={g1} alt="group1" className='groupAssets' />
                 <p className='subHead'>Courses taught by experts</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
+                <p className='subHead_paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
               </div>
               <div className="col-12 col-md-6 col-lg-3">
               <img src={g2} alt="group2" className='groupAssets'/>
                 <p className='subHead'>Community of like-minded individuals</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
+                <p className='subHead_paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
               </div>
               <div className="col-12 col-md-6 col-lg-3">
               <img src={g3} alt="group3" className='groupAssets'/>
                 <p className='subHead'>Access to Exclusive Events & Webinars</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
+                <p className='subHead_paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
               </div>
               <div className="col-12 col-md-6 col-lg-3">
               <img src={g4} alt="group4" className='groupAssets'/>
                 <p className='subHead'>Helpful Resources</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
+                <p className='subHead_paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, gravida sem urna eget iaculis</p>
               </div>
             </div>
           </div>
@@ -145,7 +146,7 @@ const index = () => {
                 </blockquote>
                 <div className="readMore">
                   <p className='readStudent'>-Kosi Nwafor (Student)</p>
-                  <p className='readStories'>READ MORE STORIES</p>
+                  <p className='readStories'>READ MORE STORIES <img src={arrow} alt="arrow-right" /></p>
                 </div>
                 
               </div>

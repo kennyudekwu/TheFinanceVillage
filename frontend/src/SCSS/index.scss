@@ -25,6 +25,7 @@ $secPadding: 5rem 0 5rem;
     top: 457px;
     border-radius: 10px;
     padding: 16px, 10px, 16px, 10px;
+    font-size: 14px;
 }
 
     .index{
@@ -67,12 +68,13 @@ $secPadding: 5rem 0 5rem;
             }
             .mainHeader{
                 font-size: 40px;
+                line-height: 60px;
             }
 
             .imgGroup{
-                width: 300px;
-                height: 250px;
+                height: auto;
                 margin-top: 2rem;
+                width: 100%;
             }
         }
 
@@ -106,8 +108,12 @@ $secPadding: 5rem 0 5rem;
 
         .sec3{
             .sec3H4{
-                font-family: 'core_sans_c45_regular';
+                font-family: 'euclid_circular_bregular';
                 color: #00292CBF;
+            }
+
+            .subHead_paragraph{
+                padding: 0px 5px;
             }
 
             .secText{
@@ -177,10 +183,13 @@ $secPadding: 5rem 0 5rem;
 
                 .readStudent{
                     font-family: 'euclid_circular_blight_italic';
+                    font-weight: 600;
                 }
 
                 .readStories{
                     font-family: 'euclid_circular_bmedium';
+                    font-weight: 600;
+                    font-size: 14px;
                     color: $priColor;
                 }
             }
@@ -199,6 +208,7 @@ $secPadding: 5rem 0 5rem;
 
             .chatBtn{
                 @include button($btnColor: $priColor);
+                margin-top: 32px;
             }
 
             .imgChat{
@@ -225,6 +235,7 @@ $secPadding: 5rem 0 5rem;
 
             .btnJoin{
                 @include button($btnColor: #02B1BC);
+                margin-top: 32px;
             }
         }
 
@@ -277,7 +288,7 @@ $secPadding: 5rem 0 5rem;
             }
 
             .sec7{
-                padding-left: 6rem !important;
+                padding-left: 110px !important;
                 padding-right: 3rem !important;
                 padding-top: 5rem !important;
 
@@ -287,13 +298,13 @@ $secPadding: 5rem 0 5rem;
             }
 
             .sec8{
-                padding-left: 0rem !important;
+                padding-left: 1rem !important;
                 padding-right: 4rem !important;
-            }
 
-            .imgGroup{
-                width: 350px;
-                height: 300px;
+                .imgG5{
+                    width: 350px !important;
+                    height: 300px !important;
+                }
             }
 
             .sec4{
@@ -347,16 +358,21 @@ $secPadding: 5rem 0 5rem;
             font-size: 30px !important;
         }
 
-        .imgGroup{
-            width: 500px !important;
-            height: 400px !important;
-        }
-
         .sect2{
             margin-top: 8rem !important;
         } 
         
         .mailInput{
             width: 350px !important;
+        }
+
+        .sec8{
+            padding-right: 140px !important;
+        }
+    }
+
+    @media only screen and (min-width: 1440px) {
+        blockquote{
+            font-size: 40px !important;
         }
     }

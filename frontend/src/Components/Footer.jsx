@@ -37,7 +37,7 @@ const Footer = () => {
 
       <div className="lowFooter container">
         <img src={logo} alt="logo" className='indexLogo'/>
-        <p>We ara a lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud equip ex ea commodo consequat... Read More</p>
+        <p className='lowFooter_paragraph'>We ara a lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud equip ex ea commodo consequat... Read More</p>
         <div className='logos'>
           <a href=""><img src={fb} alt="facebook"/></a>
           <a href=""><img src={tg} alt="telegram" className='px-4'/></a>
