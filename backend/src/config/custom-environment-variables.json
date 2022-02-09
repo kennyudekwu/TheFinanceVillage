@@ -1,4 +1,10 @@
 {
     "jwtPrivateKey": "financeVillage_jwtPrivateKey",
-    "sendGridApitKey": "mailingSecretKey"
+    "emailTokenKey": "mailingSecretKey",
+    "emailPassword": "emailPassKey",
+    "client_id": "client_id",
+    "client_secret": "client_secret",
+    "redirect_uri": "redirect_uri",
+    "refresh_token": "refresh_token",
+    "send_email": "emailLink"
 }

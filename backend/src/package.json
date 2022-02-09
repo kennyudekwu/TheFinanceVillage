@@ -13,16 +13,20 @@
     "bcryptjs": "^2.4.3",
     "config": "^3.3.7",
     "express": "^4.17.2",
+    "express-async-errors": "^3.1.1",
     "fawn": "^2.1.5",
+    "googleapis": "^92.0.0",
     "joi": "^17.5.0",
     "joi-objectid": "^4.0.2",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "mongoose": "^6.1.7",
     "morgan": "^1.10.0",
+    "node-fetch": "^2.6.7",
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
     "voucher-code-generator": "^1.1.1",
-    "winston": "^3.4.0"
+    "winston": "^3.4.0",
+    "winston-mongodb": "^5.0.7"
   }
 }

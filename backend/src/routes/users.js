@@ -4,11 +4,11 @@ const _= require('lodash');
 const {User, validateUser} = require('../models/users');
 const {Package, validatePckage} = require('../models/packages');
 const express = require('express');
-const router = express.Router();
-const mongoose = require('mongoose');
-const Fawn = require('fawn');
-const nodemailer = require('nodemailer');
 const jwt = require('jsonwebtoken');
+const router = express.Router();
+const config = require('config');
+const fetch = require('node-fetch');
+
 
 router.get('/me', auth, async (req, res) => {
     const user = await User.findById(req.user._id).select('-password');
@@ -19,28 +19,36 @@ router.post('/register', async (req, res) => {
     const {error} = validateUser(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
-    let user = await User.findOne({email: req.body.email});
+    const {email, password} = req.body;
+
+    // Prevent duplicates
+    let user = await User.findOne({email});
     if (user) return res.status(400).send('User already registered');
 
     const package = await Package.findOne({name: req.body.package});
     const inc_value = package.price*package.discount;
-    req.body.package = package;
+    req.body.package = package._id;
 
+    // Check if referred by someone and store culminated referee bonus and amount referred
     if (req.body.reference) {
-        const ref = await User.findOne({referral_id: req.body.reference});
 
-        new Fawn.Task().update('users',
-         {referral_id: req.body.reference}, {
-             // cross-check with mosh if this transaction syntax is correct.
-             // The array method I mean...
-             $inc : {
+        try {
+            const ref = await User.findOneAndUpdate({referral_id: req.body.reference},
+                {
+                    $inc : {
                         number_referred: +1,
                         net_referral_income: +inc_value
                     }
-         });
+                }, {new: true});
 
-         req.body.reference = _.pick(ref, ['_id', 'first_name', 'last_name',
-                            'email', 'referral_id']);
+            req.body.reference = _.pick(ref, ['_id', 'first_name', 'last_name',
+                                'email', 'referral_id']);
+
+        }
+        catch (error) {
+                return res.status(400).send('Non-existent referral detected');
+        }
+
     }
 
     user = new User(req.body);
@@ -48,29 +56,49 @@ router.post('/register', async (req, res) => {
 
     user.password = await bcrypt.hashSync(user.password, salt);
 
-    // Store before validating subscription payment
+    const emailToken = jwt.sign({email, password},
+        config.get('emailTokenKey'));
 
-    // Check payment before doing this
+    user.email_token = emailToken;
 
-    // Add remaining fields for verifying email before saving
+    user.referral_id = await idGeneration(user);
+    await user.save();
 
-    idGeneration().then(result => {
-        const token = user.generateAuthToken();
-        res.header('x-auth-token', token)
-        .send(result);
-    });
+    const token = user.generateAuthToken();
 
-    const {email, password} = user;
-
-
+    // Sending email by calling endpoint for verification link
+    sendMail(email, token).then(response => response.json())
+                    .then(data => {
+                    // Frontend checks "sentEmailVerificationLink" property
+                    // before displaying "email sent" modal
+                        res.header('x-auth-token', token).send(data);
+                    }).catch( err => {
+                        res.header('x-auth-token', token).send(user);
+                        console.error('Error: ', err);
+                    });
 
 });
 
-async function idGeneration() {
+// Recursive function to check for already existing unique 'referral_id's in the database
+async function idGeneration(user) {
     let ref_code = user.generateReferralCode();
     const user_exist = await User.findOne({referral_id: ref_code});
     if (user_exist) idGeneration();
-    user.referral_id = ref_code;
-    const result = await user.save();
-    return result;
+    return ref_code[0];
+
 }
+
+async function sendMail (email_param, email_token) {
+    // using 'fetch' to GET from mail-sending endpoint
+    return await fetch(config.get('send_email'), {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({email: email_param, token: email_token})
+            });
+
+}
+
+
+module.exports = router;

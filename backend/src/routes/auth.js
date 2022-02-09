@@ -4,16 +4,17 @@ const bcrypt = require('bcryptjs');
 const {User} = require('../models/users');
 const express = require('express');
 const router = express.Router();
+const emailCheck = require('../middleware/emailCheck');
 
-router.post('/', async (req, res) => {
+router.post('/', emailCheck, async (req, res) => {
     const { error } = validateUser(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
     let user = await User.findOne({ email: req.body.email });
-    if (!user) return res.status(400).send('Invalid email or password. ');
+    if (!user) return res.status(401).send('Invalid email or password');
 
     const validPassword = await bcrypt.compareSync(req.body.password, user.password);
-    if (!validPassword) return res.status(400).send('Invalid password. ');
+    if (!validPassword) return res.status(401).send('Invalid password');
 
     const token = user.generateAuthToken();
 

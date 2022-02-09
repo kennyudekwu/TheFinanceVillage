@@ -2,7 +2,7 @@ const Joi = require('joi');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const config = require('config');
-const { number } = require('joi');
+const { number, required } = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 const voucher_codes = require('voucher-code-generator');
 
@@ -32,8 +32,7 @@ email: {
 },
 
 email_token: {
-    type: String,
-    required: true
+    type: String
 },
 
 is_verified: {
@@ -60,6 +59,16 @@ country: {
     maxlength: 50
 },
 
+date_of_birth: {
+    type: Date,
+    required: true
+},
+
+occupation: {
+    type: String,
+    required: true
+},
+
 password: {
     type: String,
     required: true,
@@ -83,25 +92,21 @@ reference : {
     type: new mongoose.Schema({
         first_name: {
             type: String,
-            required: true,
             minlength: 3,
             maxlength: 50
         },
         last_name: {
             type: String,
-            required: true,
             minlength: 3,
             maxlength: 50
         },
         email: {
             type: String,
-            unique: true,
-            required: true,
             minlength: 5,
             maxlength: 255
         },
         referral_id: String
-    }),
+    })
 
 },
 
@@ -112,38 +117,65 @@ created_at: {
   },
 
 package: {
-    type: new mongoose.Schema({
-        name: {
-            type: String,
-            required: true,
-            minlength: 3,
-            maxlength: 50
-        },
-        price: {
-            type: Number,
-            required: true
-        },
-        plan_code: String
-    }),
+    /*
+    referencing is used to ensure data consistency because the
+    price or/and name of the package can be changed by admin
+
+    in package GET endpoint, validate the object id first before proceeding
+    to returning the users paid package.
+    */
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Package',
     required: true
 },
 
 courses: {
-    type: new mongoose.Schema({
-        name: {
-            type: String,
-            required: true,
-            minlength: 3,
-            maxlength: 50
-        },
-        description: {
-            type: String,
+
+    // Array of the different course objectId(s) paid for
+    type: [new mongoose.Schema({
+        // pass id of the course when storing
+
+        /*
+        In the courses GET endpoint, the courses as well as their embedded
+        contents, each having a unique id will be returned. This id value
+        aids tracking of a users progress on the course.
+
+        Course model must contain:
+        name: string
+        content: array of objects with 'id' and 'content' as properties
+        */
+
+
+
+        // name won't be returned
+
+        // corresponds to the video 'id' completed by the user
+        completed: {
+            type: [Number],
+            default: [],
             required: true
         }
-        })
+        })]
 },
 
-video_completion: Boolean,
+events: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Event'
+},
+
+// add events here - referencing relational model
+
+sent_email_link: {
+                        type: Boolean,
+                        default: false,
+                        required: true
+},
+
+video_completion: {
+                type: Boolean,
+                default: false,
+                required: true
+},
 
 isAdmin: Boolean
 });
@@ -164,14 +196,15 @@ function validateUser (user) {
         first_name: Joi.string().min(2).max(40).required(),
         last_name: Joi.string().min(2).max(40).required(),
         email: Joi.string().min(5).max(255).required().email().required(),
-        phone_number: Joi.string()
-                      .pattern(new RegExp('^[0-9+]$'))
-                      .min(4).max(20).required(),
-        reference: Joi.string().required(),
+        phone_number: Joi.string().pattern(/^[0-9]+$/)
+                         .min(4).max(20).required(),
+        reference: Joi.string(),
         country: Joi.string().min(2).max(40).required(),
-        password: Joi.string()
-                  .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
-        package: Joi.string().required()
+        password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/)
+                     .required(),
+        package: Joi.string().required(),
+        date_of_birth: Joi.date(),
+        occupation: Joi.string().required()
     })
 
     return schema.validate(user);
