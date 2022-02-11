@@ -101,7 +101,12 @@ footer .upFooter .mailInput {
   border-bottom-left-radius: 50px;
   border-style: none;
   background-color: #F9EADE;
-  padding-left: 2rem;
+  padding-left: 4rem;
+}
+footer .upFooter .mailInputicon {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  position: absolute;
 }
 footer .upFooter .btnInput {
   border-top-right-radius: 50px;
