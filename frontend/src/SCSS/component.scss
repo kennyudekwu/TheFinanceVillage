@@ -146,7 +146,13 @@ footer{
             border-bottom-left-radius: 50px;
             border-style: none;
             background-color: $bookColor;
-            padding-left: 2rem;
+            padding-left: 4rem;
+        }
+
+        .mailInputicon{
+            margin-left: 2rem;
+            margin-top: 1rem;
+            position: absolute;
         }
 
         .btnInput{
