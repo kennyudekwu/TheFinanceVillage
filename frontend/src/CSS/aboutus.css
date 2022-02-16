@@ -1,0 +1,92 @@
+div.aboutus {
+  overflow-x: hidden;
+  font-family: "euclid_circular_bregular";
+  word-spacing: 3px;
+  background-color: #f8f9fa;
+  font-size: 14px;
+}
+div.aboutus h1, div.aboutus h2 {
+  font-family: "core_sans_c65_bold";
+}
+div.aboutus .aboutH1, div.aboutus .aboutH2 {
+  padding-bottom: 1rem;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+div.aboutus .about {
+  padding: 0rem 2rem 5rem 2rem;
+  font-size: 14px;
+}
+div.aboutus .about section.one {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+div.aboutus .about img.founder {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  height: 350px;
+  width: 220px;
+}
+div.aboutus .coin1, div.aboutus .coin2 {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .about {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  div.aboutus .aboutH1, div.aboutus .aboutH2 {
+    font-family: "core_sans_c65_bold";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  div.aboutus .aboutH2 {
+    font-size: 30px;
+  }
+  div.aboutus section.one {
+    padding: 0 2rem 8rem 5rem !important;
+  }
+  div.aboutus section.one .coin1, div.aboutus section.one .coin2 {
+    display: unset;
+  }
+  div.aboutus section.one .coin1 {
+    float: left;
+    margin-left: -14rem;
+    margin-top: -3rem;
+  }
+  div.aboutus section.one .coin2 {
+    float: right;
+    margin-right: -11rem;
+    margin-top: -5rem;
+  }
+  div.aboutus .about {
+    padding-left: 12rem !important;
+    padding-right: 12rem !important;
+    padding-top: 5rem;
+    font-size: 16px;
+  }
+  div.aboutus .about .paragraph {
+    text-align: left;
+  }
+  div.aboutus img.founder {
+    padding-top: 0rem !important;
+    margin-top: -2rem;
+    height: 350px;
+    width: 220px;
+    height: 302px;
+    width: 299px;
+  }
+}
+
+/*# sourceMappingURL=aboutus.css.map */

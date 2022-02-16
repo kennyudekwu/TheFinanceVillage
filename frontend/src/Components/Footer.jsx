@@ -7,6 +7,7 @@ import wp from '../Img/whatsapp.svg'
 import ln from '../Img/linkedin.svg'
 import call from '../Img/call.svg'
 import mail from '../Img/mail.svg'
+import inputIcon from '../Img/inputMailicon.svg'
 
 
 const Footer = () => {
@@ -20,6 +21,7 @@ const Footer = () => {
       </div>
       <div className="col-12 col-sm-6">
         <form action="" method="post">
+          <img src={inputIcon} alt="inputIcon" className='mailInputicon'/>
           <input type="email" name="" id="" placeholder='Enter your email' className='mailInput'/>
           <button className='Submit btn btnInput'>Submit</button>
         </form>

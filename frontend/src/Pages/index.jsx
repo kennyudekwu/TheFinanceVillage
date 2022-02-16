@@ -175,7 +175,7 @@ const index = () => {
               for you right now?</h1>
               <p>Join the Finance Village to gain the knowledge you need to manage and
               grow your wealth.</p>
-              <button className="btn btnJoin">Join the Village</button>
+              <Link to="joinus"><button className="btn btnJoin">Join the Village</button></Link> 
           </div>
         </div>
 
