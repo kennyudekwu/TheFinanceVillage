@@ -17,7 +17,10 @@ const Package = new mongoose.model('Package', new mongoose.Schema({
         type: String,
         required: true
     },
-    discount: Number,
+    discount: {
+        type: Number,
+        default: 0
+    },
     plan_code: String
 }));
 

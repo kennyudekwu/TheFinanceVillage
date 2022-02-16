@@ -56,21 +56,17 @@ router.post('/register', async (req, res) => {
 
     user.password = await bcrypt.hashSync(user.password, salt);
 
-    const emailToken = jwt.sign({email, password},
-        config.get('emailTokenKey'));
-
-    user.email_token = emailToken;
-
     user.referral_id = await idGeneration(user);
     await user.save();
 
     const token = user.generateAuthToken();
 
     // Sending email by calling endpoint for verification link
-    sendMail(email, token).then(response => response.json())
-                    .then(data => {
+    sendMail(token).then(response => response.json())
+                   .then(data => {
                     // Frontend checks "sentEmailVerificationLink" property
                     // before displaying "email sent" modal
+
                         res.header('x-auth-token', token).send(data);
                     }).catch( err => {
                         res.header('x-auth-token', token).send(user);
@@ -79,7 +75,7 @@ router.post('/register', async (req, res) => {
 
 });
 
-// Recursive function to check for already existing unique 'referral_id's in the database
+// Recursive function to check for already existing unique 'referral_id's' in the database
 async function idGeneration(user) {
     let ref_code = user.generateReferralCode();
     const user_exist = await User.findOne({referral_id: ref_code});
@@ -88,16 +84,15 @@ async function idGeneration(user) {
 
 }
 
-async function sendMail (email_param, email_token) {
+async function sendMail (email_token) {
     // using 'fetch' to GET from mail-sending endpoint
     return await fetch(config.get('send_email'), {
-            method: 'POST',
+            method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({email: email_param, token: email_token})
+                'Content-Type': 'application/json',
+                'x-auth-token': email_token
+            }
             });
-
 }
 
 

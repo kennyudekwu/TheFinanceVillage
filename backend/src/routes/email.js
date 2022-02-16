@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const config = require('config');
 const nodemailer = require('nodemailer');
-
+// const fetch = require('node-fetch');
 
 // Google Mailing Parameters
 const client_id = config.get('client_id');
@@ -24,9 +24,10 @@ const OAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_u
 */
 OAuth2Client.setCredentials({refresh_token: refresh_token});
 
-router.post('/send-link', async(req, res) => {
-    const {email, token} = req.body;
-    let user = await User.findOne({email}).select('-password');
+router.get('/send-link', auth,  async(req, res) => {
+    const token = req.header('x-auth-token');
+
+    let user = await User.findById(req.user._id).select('-password');
 
     if (!user) return res.status(400).send('User does not exist');
     else if (user.sentEmailVerficationLink === true) return res.status(400).send('Link already sent');
@@ -56,6 +57,7 @@ router.post('/send-link', async(req, res) => {
         user.email_token = token;
         user = await user.save();
 
+        // filter 'email_token' and some other irrelevant or classified info before sending 'user' response
         result.user = user;
         result.mail = mail;
 
@@ -86,6 +88,7 @@ router.get('/verify-email', async (req, res) => {
     user.is_verified = true;
     uaer = await user.save();
 
+    // render email verify success page
     const mailOption = {
         from: 'Finance Village <kennyudekwu@gmail.com>',
         to: user.email,
@@ -103,13 +106,16 @@ router.get('/verify-email', async (req, res) => {
     };
 
         //display 'verification successful page'
-        // redirect to payment page
+        // redirect to payment page with the token in the header
 
 
     // if there is a mail-sending ish, do the needful but still display success page
     sendingMail(mailOption).then(() => {
-        res.status(200);
-    })
+        // initializePayment(req.query.token);
+        // res.header('x-auth-token', req.query.token);
+        // display email verification success page and wait for 2.5 seconds before redirecting
+        res.redirect(`http://${req.headers.host}/api/payments/subscription-payment?token=${req.query.token}`);
+    }).then(() => res.status(200));
 
 })
 
@@ -133,6 +139,17 @@ async function sendingMail (msg) {
     return mail;
 
 }
+
+// async function initializePayment (token) {
+//     // using 'fetch' to GET from payment endpoint
+//     return await fetch(config.get('payment_gateway'), {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'x-auth-token': token
+//         }
+//         });
+// }
 
 
 module.exports = router;

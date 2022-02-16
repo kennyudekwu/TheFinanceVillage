@@ -76,6 +76,17 @@ password: {
     maxlength: 1024
 },
 
+bank_account_number: {
+    type: String,
+    minlength: 10,
+    maxlength: 10
+},
+
+address: {
+    type: String,
+    minlength: 5
+},
+
 referral_id: String,
 
 number_referred: {
