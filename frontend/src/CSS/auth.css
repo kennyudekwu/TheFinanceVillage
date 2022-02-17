@@ -1,0 +1,111 @@
+@import url(core_stylesheet.css);
+@import url(euclid_stylesheet.css);
+h2 {
+  font-family: "core_sans_c65_bold";
+}
+
+div.login {
+  overflow-x: hidden;
+  background-color: #f8f9fa;
+  font-family: "euclid_circular_bregular";
+  font-size: 14px;
+}
+div.login .logo {
+  height: 130px;
+  width: 130px;
+}
+div.login .loginCard {
+  margin-top: 5rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  border-radius: 10px;
+  height: 563px;
+  width: 336px;
+}
+div.login .loginCard a {
+  color: #008E97;
+}
+div.login .innerCard {
+  padding: 0rem 2rem 2rem 2rem;
+}
+div.login .loginBtn {
+  background-color: #008E97;
+  color: white;
+  height: 50px;
+  width: 169px;
+  left: 103px;
+  top: 457px;
+  border-radius: 10px;
+  padding: 16px, 10px, 16px, 10px;
+  width: 100%;
+}
+div.login .loginInput {
+  background-color: whitesmoke;
+  height: 45px;
+}
+div.login .viewPass {
+  height: 21.2000007629px;
+  width: 21.2000007629px;
+  margin-left: 15rem;
+  margin-top: 15.5rem;
+  position: absolute;
+}
+div.login .forgotPass {
+  text-align: right;
+  color: #15253DBA !important;
+  padding: 1rem;
+  padding-bottom: 3rem;
+  font-size: 12px;
+  text-decoration: none;
+}
+div.login .enterCred {
+  color: #000000B2;
+}
+div.login .policy {
+  font-size: 12px;
+  padding-top: 2rem;
+  color: rgba(21, 37, 61, 0.73);
+  line-height: 19px;
+}
+div.login .lowerCard {
+  margin-top: 2rem;
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  border-radius: 10px;
+}
+div.login .lowerCard .createAcc {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 320px) {
+  .loginCard {
+    width: max-content !important;
+    margin-bottom: 15rem !important;
+  }
+
+  .innerCard {
+    height: max-content !important;
+  }
+
+  .lowerCard {
+    height: max-content !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .loginCard {
+    height: 562.9777832031px !important;
+    width: 530px !important;
+    margin-bottom: 15rem !important;
+  }
+
+  .loginInput {
+    height: 53px !important;
+  }
+
+  .viewPass {
+    margin-left: 26rem !important;
+    margin-top: 16.3rem !important;
+  }
+}
+
+/*# sourceMappingURL=auth.css.map */

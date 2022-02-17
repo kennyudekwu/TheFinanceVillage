@@ -26,7 +26,11 @@
 .navbar .nav-item {
   padding: 0 1rem 0 1rem;
 }
+.navbar .nav-item a {
+  text-decoration: none;
+}
 .navbar .nav-item .nav-link {
+  text-align: left !important;
   color: white;
 }
 .navbar .login {
@@ -156,6 +160,60 @@ footer .footerRights {
   text-align: center;
 }
 
+.signupModal {
+  color: #00000080;
+}
+.signupModal .tabTwo {
+  display: none;
+}
+.signupModal label {
+  float: left;
+  padding-bottom: 10px;
+}
+.signupModal input {
+  height: 50px;
+}
+.signupModal .modalHeader {
+  padding-top: 2rem;
+}
+.signupModal .modalHeader .close {
+  float: right;
+}
+.signupModal .modalHeader .modal-title {
+  padding-top: 1rem;
+  color: black;
+  font-size: 22px;
+}
+.signupModal .modal-content {
+  background-color: #f8f9fa;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.signupModal .modalCol {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.signupModal .btn.continue {
+  background-color: #008E97;
+  color: white;
+  height: 50px;
+  width: 169px;
+  left: 103px;
+  top: 457px;
+  border-radius: 10px;
+  padding: 16px, 10px, 16px, 10px;
+  width: 98%;
+  margin-left: 0.7rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2.3rem;
+}
+.signupModal .emailConfirmed {
+  height: 150px;
+  width: 150px;
+}
+
 @media screen and (min-width: 375px) {
   .navbar-toggler {
     margin-left: 5rem !important;
@@ -250,6 +308,7 @@ footer .footerRights {
   .navbar .login.authLink {
     margin-left: 1rem;
     color: #008E97 !important;
+    text-align: center !important;
   }
   .navbar .login.authLink:hover {
     background-color: #008E97 !important;
@@ -258,6 +317,7 @@ footer .footerRights {
   .navbar .signup.authLink {
     margin-left: 0.1rem !important;
     color: white !important;
+    text-align: center !important;
   }
 
   footer .upFooter {
@@ -270,6 +330,10 @@ footer .footerRights {
   footer .lowFooter_paragraph {
     padding-left: 175px !important;
     padding-right: 175px !important;
+  }
+
+  .signupModal .modal-title {
+    font-size: 28px !important;
   }
 }
 @media screen and (min-width: 1110px) {
