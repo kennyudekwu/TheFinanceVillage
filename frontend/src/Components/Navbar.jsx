@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, withRouter } from "react-router-dom";
+import { Link, NavLink, withRouter } from "react-router-dom";
 import logo from '../Img/logo.svg'
 
 const Navbar = () => {
@@ -7,7 +7,7 @@ const Navbar = () => {
   <nav className="navbar navbar-expand-lg navbar-light">
   <div className="container-fluid">
     <i className="topNav">
-    <NavLink exact to ="/" class="navbar-brand" href="#">
+    <NavLink exact to ="/" className="navbar-brand" href="#">
       <img src={logo} alt="logo" className='logoNav'/>
     </NavLink>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,10 +30,10 @@ const Navbar = () => {
         </li>
 
         <li className="nav-item">
-        <button className="btn login nav-link authLink" type="submit">Log In</button>
+          <Link exact to="login"><button className="btn login nav-link authLink" type="submit">Log In</button></Link>
         </li>
         <li className="nav-item">
-        <button className="btn signup nav-link authLink" type="submit">Become a Member</button>
+          <Link exact to ="joinus"><button className="btn signup nav-link authLink" type="submit">Become a Member</button></Link>
         </li>
       </ul>
       {/* <div className="">

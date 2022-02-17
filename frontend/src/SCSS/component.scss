@@ -58,7 +58,12 @@ $secPadding: 5rem 0 5rem;
     .nav-item{
         padding: 0 1rem 0 1rem;
 
+        a{
+            text-decoration: none;
+        }
+
         .nav-link{
+            text-align: left !important;
             color: $textColor;
         }
     }
@@ -214,6 +219,63 @@ footer{
     }
 }
 
+.signupModal{
+    color: #00000080;
+    
+    .tabTwo{
+        display: none;
+    }
+
+    label{
+        float: left;
+        padding-bottom: 10px;
+    }
+
+    input{
+        height: 50px;
+    }
+
+    .modalHeader{
+        padding-top: 2rem;
+
+        .close{
+            float: right;
+        }
+
+        .modal-title{
+            padding-top: 1rem;
+            color: black;
+            font-size: 22px;
+        }
+    }
+
+    .modal-content{
+        background-color: $bgColor;
+        padding-left: 2rem;
+        padding-right: 2rem; 
+    }
+
+    .modalCol{
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .btn.continue{
+        @include button($btnColor: $priColor);
+        width: 98%;
+        margin-left: .7rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        padding-top: 1rem;
+        padding-bottom: 2.3rem;
+    }
+
+    .emailConfirmed{
+        height: 150px;
+        width: 150px;
+    }
+}
+
 
 @media screen and (min-width: 375px){
     .navbar-toggler{
@@ -322,6 +384,7 @@ footer{
         .login.authLink{
             margin-left: 1rem;
             color: $priColor !important;
+            text-align: center !important;
         }
 
         .login.authLink:hover{
@@ -332,6 +395,7 @@ footer{
         .signup.authLink{
             margin-left: .1rem !important;
             color: $textColor !important;
+            text-align: center !important;
         }
     }
 
@@ -348,6 +412,13 @@ footer{
         .lowFooter_paragraph{
             padding-left: 175px !important;
             padding-right: 175px !important;
+        }
+    }
+
+    .signupModal{
+
+        .modal-title{
+            font-size: 28px !important;
         }
     }
 }

@@ -1,0 +1,142 @@
+@import url(core_stylesheet.css);
+@import url(euclid_stylesheet.css);
+
+$bgColor: #f8f9fa;
+$priColor: #008E97;
+$secColor: #F58220;
+$bookColor: #F9EADE;
+$altColor: #014448;
+$textColor: white;
+$newColor: #F582200D;
+$alttextColor: #00292C;
+$secPadding: 5rem 0 5rem;
+
+@mixin theme($theme: $bgColor) {
+    background: $theme;
+    padding: $secPadding;
+}
+
+@mixin button($btnColor: $priColor) {
+    background-color: $btnColor;
+    color: $textColor;
+    height: 50px;
+    width: 169px;
+    left: 103px;
+    top: 457px;
+    border-radius: 10px;
+    padding: 16px, 10px, 16px, 10px;
+}
+
+
+h2{
+    font-family: "core_sans_c65_bold";
+
+}
+
+div.login{
+    overflow-x: hidden;
+    background-color: $bgColor;
+    font-family: 'euclid_circular_bregular';
+    font-size: 14px;
+
+    .logo{
+        height: 130px;
+        width: 130px;
+    }
+
+    .loginCard{
+        margin-top: 5rem;
+        text-align: center;     
+        margin-bottom: 5rem;
+        border-radius: 10px;
+        height: 563px;
+        width: 336px;
+
+        a{
+            color: $priColor;
+        }
+    }
+
+    .innerCard{
+        padding: 0rem 2rem 2rem 2rem;
+    }
+
+    .loginBtn{
+        @include button($btnColor: $priColor);
+        width: 100%;
+    }
+
+    .loginInput{
+        background-color: whitesmoke;
+        height: 45px;
+    }
+
+    .viewPass{
+        height: 21.200000762939453px;
+        width: 21.200000762939453px;
+        margin-left: 15rem;
+        margin-top: 15.5rem;
+        position: absolute;
+    }
+
+    .forgotPass{
+        text-align: right;
+        color: #15253DBA !important;
+        padding: 1rem;
+        padding-bottom: 3rem;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    .enterCred{
+        color: #000000B2;
+    }
+    .policy{
+        font-size: 12px;
+        padding-top: 2rem;
+        color: rgba(21, 37, 61, 0.73);
+        line-height: 19px;
+    }
+
+    .lowerCard{
+        margin-top: 2rem;
+        padding: 1.5rem 1rem .5rem 1rem;
+        border-radius: 10px;
+
+        .createAcc{
+            font-weight: 600;
+            text-decoration: none;
+        }
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .loginCard{
+        width: max-content !important;
+        margin-bottom: 15rem !important;
+    }
+
+    .innerCard{
+        height: max-content !important;
+    }
+
+    .lowerCard{
+        height: max-content !important;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .loginCard{
+        height: 562.977783203125px !important;
+        width: 530px !important;
+        margin-bottom: 15rem !important;
+    }
+    .loginInput{
+        height: 53px !important;
+    }
+
+    .viewPass{
+        margin-left: 26rem !important;
+        margin-top: 16.3rem !important;
+    }
+}

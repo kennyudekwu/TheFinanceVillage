@@ -16,7 +16,7 @@ const Footer = () => {
     <div className="upFooter mt-5 container">
     <div className="row">
       <div className="col-12 col-sm-6 alignLeft">
-        <h2>Newsletter</h2>
+        <h2 className='newsletter'>Newsletter</h2>
         <p>Be the first one to know about discounts, offers and events. Unsubscribe whenever you like.</p>
       </div>
       <div className="col-12 col-sm-6">
