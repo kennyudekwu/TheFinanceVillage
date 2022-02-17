@@ -86,7 +86,7 @@ const Modal = () => {
                     </div>
                     {/* <a className='btn continue' type='submit'>Continue</a> */}
                 </div>
-                <a className='btn continue' type="submit" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#exampleModalCenter">Continue</a>
+                <button className='btn continue' type="submit" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#exampleModalCenter">Continue</button>
             </form>
 
         </div>
