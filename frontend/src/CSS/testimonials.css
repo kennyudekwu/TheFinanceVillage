@@ -81,9 +81,9 @@ div.testimonial .sec8 .btnJoin {
     width: 280px !important;
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 375px) {
   .tCard {
-    width: 290px !important;
+    width: 300px !important;
   }
 }
 @media screen and (min-width: 768px) {
