@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/calendar.css">
+    <title>Calendar</title>
+</head>
+<body>
+    <%- include('./partials/_bstrap.ejs'); %> 
+    <%- include('./partials/_calendarmodal.ejs'); %> 
+
+    <div>
+        <%- include('./partials/_nav'); %> 
+        <div class="calendar">
+            <div class="container">
+                <div class="headerdiv">
+                    <h3 class="header">Calendar</h3>
+                    <p>Wondering when the next Masterclass will be released? You've come to the right place</p>
+                    <img src="/img/search-normal.png" alt="serachicon" class="searchIcon">
+                    <input type="text" placeholder='Search Courses' class="searchBox form-control"/>
+                </div>
+
+                <div class="mainDate">
+                    <span class="h3">Feb'2021</span> 
+                    <img src="/img/frame.svg" alt="">
+                </div>
+                 
+                <div class="container">
+                <div class="row">
+                    <div class="col-12 card" data-toggle="modal" data-target="#exampleModal">
+                        <div class="row">
+                            <div class="col-lg-1 col-12">
+                                <span class="smalltext lgscreen">Tue</span>
+                                <span class="smalltext smscreen">Tuesday</span>
+                                <span class="h3">23</span>
+                                <span class="lighttext smalltext">Today</span>
+                            </div>
+                            <div class="col-lg-6 col-12 centralize">The Breakfast Club with The Finance Village</div>
+                            <div class="col-lg-3 col-12 lighttext centralize">
+                                <img src="/img/clock.svg" alt="clock" class="imgblack">   
+                                <img src="/img/clockwhite.svg" alt="clock" class="imgwhite">     
+                                10:30am - 12:30pm
+                            </div>
+                            <div class="col-lg-2 col-12 lighttext centralize">
+                                <img src="/img/monitor.svg" alt="monitor" class="imgblack">
+                                <img src="/img/monitorwhite.svg" alt="monitor" class="imgwhite">
+                                Online
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 card my-4" data-toggle="modal" data-target="#exampleModal">
+                        <div class="row">
+                            <div class="col-lg-1 col-12">
+                                <span class="smalltext lgscreen">Tue</span>
+                                <span class="smalltext smscreen">Tuesday</span>
+                                <span class="h3">23</span>
+                                <span class="lighttext smalltext">Today</span>
+                            </div>
+                            <div class="col-lg-6 col-12 centralize">The Breakfast Club with The Finance Village</div>
+                            <div class="col-lg-3 col-12 lighttext centralize">
+                                <img src="/img/clock.svg" alt="clock" class="imgblack">   
+                                <img src="/img/clockwhite.svg" alt="clock" class="imgwhite">     
+                                10:30am - 12:30pm
+                            </div>
+                            <div class="col-lg-2 col-12 lighttext centralize">
+                                <img src="/img/monitor.svg" alt="monitor" class="imgblack">
+                                <img src="/img/monitorwhite.svg" alt="monitor" class="imgwhite">
+                                Online
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 card" data-toggle="modal" data-target="#exampleModal">
+                        <div class="row">
+                            <div class="col-lg-1 col-12">
+                                <span class="smalltext lgscreen">Tue</span>
+                                <span class="smalltext smscreen">Tuesday</span>
+                                <span class="h3">23</span>
+                                <span class="lighttext smalltext">Today</span>
+                            </div>
+                            <div class="col-lg-6 col-12 centralize">The Breakfast Club with The Finance Village</div>
+                            <div class="col-lg-3 col-12 lighttext centralize">
+                                <img src="/img/clock.svg" alt="clock" class="imgblack">   
+                                <img src="/img/clockwhite.svg" alt="clock" class="imgwhite">     
+                                10:30am - 12:30pm
+                            </div>
+                            <div class="col-lg-2 col-12 lighttext centralize">
+                                <img src="/img/monitor.svg" alt="monitor" class="imgblack">
+                                <img src="/img/monitorwhite.svg" alt="monitor" class="imgwhite">
+                                Online
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 card mt-4" data-toggle="modal" data-target="#exampleModal">
+                        <div class="row">
+                            <div class="col-lg-1 col-12">
+                                <span class="smalltext lgscreen">Tue</span>
+                                <span class="smalltext smscreen">Tuesday</span>
+                                <span class="h3">23</span>
+                                <span class="lighttext smalltext">Today</span>
+                            </div>
+                            <div class="col-lg-6 col-12 centralize">The Breakfast Club with The Finance Village</div>
+                            <div class="col-lg-3 col-12 lighttext centralize">
+                                <img src="/img/clock.svg" alt="clock" class="imgblack">   
+                                <img src="/img/clockwhite.svg" alt="clock" class="imgwhite">     
+                                10:30am - 12:30pm
+                            </div>
+                            <div class="col-lg-2 col-12 lighttext centralize">
+                                <img src="/img/monitor.svg" alt="monitor" class="imgblack">
+                                <img src="/img/monitorwhite.svg" alt="monitor" class="imgwhite">
+                                Online
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

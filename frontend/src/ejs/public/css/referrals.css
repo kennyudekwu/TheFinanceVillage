@@ -1,0 +1,174 @@
+.dashboard, .calendar, .settings, .lesson, .referrals {
+  overflow-x: hidden;
+  background-color: #FAFAFA;
+  font-family: "euclid_circular_bregular";
+  font-size: 14px;
+  text-align: left;
+  word-spacing: 3px;
+  line-height: 26px;
+  padding-top: 3rem;
+  word-wrap: break-word;
+}
+.dashboard h3, .dashboard h5, .calendar h3, .calendar h5, .settings h3, .settings h5, .lesson h3, .lesson h5, .referrals h3, .referrals h5 {
+  font-family: "core_sans_c65_bold";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 2rem;
+}
+.dashboard .header, .calendar .header, .settings .header, .lesson .header, .referrals .header {
+  font-size: 24px;
+  line-height: 37.8px;
+  font-family: "core_sans_c55_medium";
+}
+
+@media only screen and (min-width: 1024px) {
+  .dashboard, .calendar, .settings, .lesson, .referrals {
+    padding: 3rem 5rem 3rem 20rem;
+  }
+}
+.referrals .header {
+  font-size: 24px !important;
+  font-weight: 600;
+}
+.referrals .columns {
+  background-image: url("../img/background.svg");
+  background-size: cover;
+  color: white;
+  height: 124px;
+  border-radius: 5px;
+  margin-top: 2rem;
+  margin-right: 0.3rem;
+}
+.referrals .columns .group {
+  margin: 2.3rem 0 0 4rem;
+}
+.referrals .columns img {
+  position: absolute;
+  margin: 3rem 0 0 1rem;
+}
+.referrals .colOne {
+  width: 48%;
+}
+.referrals .colTwo {
+  width: 100%;
+}
+.referrals h3.header {
+  margin-top: -1rem;
+  margin-bottom: 0rem;
+}
+.referrals .referralh3 {
+  margin-top: 5rem;
+  margin-bottom: 0.7rem;
+}
+.referrals .earningsh3 {
+  margin-top: 3rem;
+}
+.referrals .link {
+  display: none;
+}
+.referrals .copy {
+  width: 30px;
+  height: 30px;
+  margin-left: -1rem;
+  margin-top: 0.5rem;
+}
+.referrals .refLink {
+  word-break: break-all;
+}
+.referrals .card {
+  padding: 0.3rem 1rem 1.7rem 1rem;
+  margin: 0;
+  width: 100%;
+}
+.referrals .card div.grid {
+  display: grid;
+  margin-left: 2.5rem;
+  margin-top: -2.5rem;
+}
+.referrals .card span.date {
+  margin-top: -2.5rem;
+  font-size: 12px;
+  color: #00292C66;
+}
+.referrals .card span.currencyGreen {
+  color: #05B723;
+}
+.referrals .card span.currencyRed {
+  color: #E45865;
+}
+.referrals .card img {
+  margin-top: 1.5rem;
+}
+
+@media only screen and (max-width: 325px) {
+  .colOne .group {
+    margin: 2.3rem 0 0 2rem !important;
+    font-size: 12px;
+  }
+  .colOne img {
+    margin: 3rem 0 0 -0.5rem !important;
+  }
+}
+@media only screen and (max-width: 380px) and (min-width: 325px) {
+  .colOne .group {
+    margin: 2.3rem 0 0 2.5rem !important;
+  }
+  .colOne img {
+    margin: 3rem 0 0 0rem !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .colOne {
+    width: 48%;
+  }
+
+  .colTwo {
+    width: 97% !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .columns {
+    margin-right: 1rem;
+  }
+
+  .colOne {
+    width: 250px !important;
+  }
+
+  .colTwo {
+    width: 250px !important;
+  }
+
+  .link {
+    display: unset;
+  }
+
+  .referrals .card {
+    padding: 0.3rem 2rem 1.7rem 2rem;
+    width: 90%;
+  }
+
+  div.grid {
+    margin-left: 3rem;
+  }
+
+  h3.header {
+    margin-top: 0.5rem !important;
+  }
+
+  .link {
+    display: unset !important;
+  }
+
+  .copy {
+    margin-left: -5rem !important;
+    margin-top: -0.2rem !important;
+  }
+
+  span.date {
+    font-size: 14px !important;
+  }
+}
+
+/*# sourceMappingURL=referrals.css.map */

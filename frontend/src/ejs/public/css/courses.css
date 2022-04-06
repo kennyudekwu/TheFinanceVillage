@@ -1,0 +1,221 @@
+.dashboard, .calendar, .settings, .lesson, .referrals {
+  overflow-x: hidden;
+  background-color: #FAFAFA;
+  font-family: "euclid_circular_bregular";
+  font-size: 14px;
+  text-align: left;
+  word-spacing: 3px;
+  line-height: 26px;
+  padding-top: 3rem;
+  word-wrap: break-word;
+}
+.dashboard h3, .dashboard h5, .calendar h3, .calendar h5, .settings h3, .settings h5, .lesson h3, .lesson h5, .referrals h3, .referrals h5 {
+  font-family: "core_sans_c65_bold";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 2rem;
+}
+.dashboard .header, .calendar .header, .settings .header, .lesson .header, .referrals .header {
+  font-size: 24px;
+  line-height: 37.8px;
+  font-family: "core_sans_c55_medium";
+}
+
+@media only screen and (min-width: 1024px) {
+  .dashboard, .calendar, .settings, .lesson, .referrals {
+    padding: 3rem 5rem 3rem 20rem;
+  }
+}
+.courses, .courseDescription {
+  font-family: "euclid_circular_bregular";
+  background-color: #FAFAFA;
+}
+.courses h3, .courses h5, .courseDescription h3, .courseDescription h5 {
+  font-family: "core_sans_c65_bold";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.courses button {
+  background-color: #008E97;
+  color: white;
+  height: 50px;
+  width: 169px;
+  left: 103px;
+  top: 457px;
+  border-radius: 10px;
+  padding: 16px, 10px, 16px, 10px;
+  border-style: none;
+  font-size: 14px;
+  width: 100%;
+}
+.courses .row .col {
+  padding-bottom: 4rem;
+}
+.courses .headerdiv {
+  padding-bottom: 5rem;
+}
+.courses .headerdiv input {
+  padding-left: 3rem;
+}
+.courses .header {
+  padding-top: 1rem;
+  font-size: 24px !important;
+  font-weight: 600;
+}
+.courses .searchBox {
+  width: 100%;
+  background-color: #008E9721;
+  border-style: none;
+  border-radius: 30px;
+  height: 50px;
+  width: 100%;
+  padding: 0px, 0px, 0px, 25px;
+}
+.courses .card {
+  height: 457px;
+  width: 270px;
+  border-radius: 8px;
+  text-align: left;
+}
+.courses .card span.bookstatus {
+  border-radius: 10px;
+  padding: 5px 20px;
+  background-color: #F58220;
+  color: white;
+  font-size: 12px;
+}
+.courses .card .card-text {
+  padding: 30px 20px;
+}
+.courses .card .pt-3 {
+  font-size: 14px;
+  line-height: 19px;
+}
+.courses .card p {
+  font-size: 12px;
+  color: #00292CA6;
+}
+.courses .searchIcon {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  position: absolute;
+}
+
+.courseDescription {
+  color: #00292C;
+}
+.courseDescription .container {
+  padding-top: 1rem;
+}
+.courseDescription p {
+  line-height: 26px;
+}
+.courseDescription span.pt-2 {
+  color: #00292CA6;
+}
+.courseDescription .header {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-size: 24px !important;
+  font-weight: 600;
+}
+.courseDescription .courseContent {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.courseDescription .accdImg {
+  height: 32px;
+  width: 32px;
+}
+.courseDescription .accordion-button .content {
+  display: grid;
+  padding-left: 20px;
+}
+.courseDescription .accordion-body {
+  padding-left: 7rem;
+  border: solid 1px whitesmoke;
+}
+.courseDescription .accordion-item {
+  border: solid 1px whitesmoke;
+}
+.courseDescription .accordion-body a {
+  text-decoration: none;
+  color: #00292C;
+}
+.courseDescription .accordion-body.main {
+  background-color: #008E97;
+  color: white;
+  padding-left: 5rem;
+}
+.courseDescription .accordion-button.collapse {
+  background-color: #008E97;
+  color: #008E97;
+}
+.courseDescription .accordion-button:not(.collapsed) {
+  color: #00292C;
+}
+.courseDescription .accordion-button::after {
+  background-image: url(../img/arrow-circle-down.svg);
+}
+.courseDescription .accordion-button:not(.collapsed)::after {
+  background-image: url(../img/arrow-circle-down.svg);
+}
+
+.resources .downloadcard {
+  width: 100%;
+  padding: 1rem 1rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(21, 37, 61, 0.1);
+  box-sizing: border-box;
+  border-radius: 10px;
+  line-height: 14px;
+  font-size: 12px;
+}
+.resources .downloadcard button {
+  background-color: #008E97;
+  color: white;
+  height: 50px;
+  width: 169px;
+  left: 103px;
+  top: 457px;
+  border-radius: 10px;
+  padding: 16px, 10px, 16px, 10px;
+  border-style: none;
+  font-size: 14px;
+  width: 78px;
+  height: 33px;
+  float: right;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 1030px) and (max-height: 600px) {
+  .courses .container .card, .courseDescription .card, resources .card {
+    width: 180px !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .courses .container, .courseDescription, resources {
+    padding: 2rem 5rem 3rem 20rem;
+  }
+  .courses .container .card, .courseDescription .card, resources .card {
+    width: 230px;
+  }
+
+  .courseDescription .accdImg {
+    height: 36px;
+    width: 36px;
+  }
+
+  .resources .downloadcard {
+    font-size: 14px;
+  }
+  .resources .downloadcard button {
+    width: 107px;
+    float: right;
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=courses.css.map */

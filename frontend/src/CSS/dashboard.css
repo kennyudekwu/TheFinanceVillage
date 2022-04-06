@@ -1,0 +1,74 @@
+@import url(core_stylesheet.css);
+@import url(euclid_stylesheet.css);
+.dashboard {
+  overflow-x: hidden;
+  background-color: #FAFAFA;
+  font-family: "euclid_circular_bregular";
+  font-size: 14px;
+  text-align: left;
+  word-spacing: 3px;
+  line-height: 26px;
+  padding-top: 3rem;
+  word-wrap: break-word;
+}
+.dashboard .founder {
+  height: 187.2859039307px;
+  width: 100%;
+  height: 100%;
+  margin: 3rem 0 3rem;
+}
+.dashboard .userName {
+  color: #F58220;
+}
+.dashboard .card {
+  width: 100%;
+  border-radius: 10px;
+  padding: 1rem;
+  border: none;
+  margin: 2rem 0;
+}
+.dashboard .icon {
+  display: none;
+}
+.dashboard .card.red {
+  background-color: #E458651A;
+  color: #E45865;
+}
+.dashboard .card.red .cardText {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.dashboard .card.green {
+  background-color: #008E9721;
+}
+.dashboard .card.green .cardText {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .dashboard .container {
+    padding: 2rem 5rem 3rem 20rem;
+  }
+  .dashboard .container .icon {
+    width: 24px;
+    height: 24px;
+    display: unset;
+  }
+  .dashboard .container .card.red .cardText {
+    padding: 5px 10px 5px 50px;
+  }
+  .dashboard .container .card.red .icon {
+    position: absolute;
+    top: 2rem;
+  }
+  .dashboard .container .card.green .cardText {
+    padding: 20px 10px 20px 50px;
+  }
+  .dashboard .container .card.green .icon {
+    position: absolute;
+    top: 2.3rem;
+  }
+}
+
+/*# sourceMappingURL=dashboard.css.map */

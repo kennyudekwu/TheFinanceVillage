@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/courses.css">
+  <title>Courses</title>
+</head>
+<body>
+<%- include('./partials/_bstrap.ejs'); %> 
+
+    <div>
+      <%- include('./partials/_nav'); %> 
+      <div class="courses">
+        <div class="container">
+          <div class="headerdiv">
+            <h3 class="header">Our Courses</h3>
+            <p>We're so excited to have you here! You can start learning immediately by clicking on any course</p>
+            <img src="/img/search-normal.png" alt="serachicon" class="searchIcon">
+            <input type="text" placeholder='Search Courses' class="searchBox form-control"/>
+          </div>
+
+          <center><div class="row">
+            <div class="col col-lg-4">
+              <div class="card">
+                <img src="/img/freecourse1.svg" alt="course" />
+                <div class="card-text">
+                <span class="bookstatus">Free</span>
+                <h5 class="pt-3">A simple guide to savings by the finance village</h5>
+                <p class="pt-1">We're so excited to have you here! You can start learning immediately ave you here! You can start</p>
+                <a href="courseDescription"><button>Get Started</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col col-lg-4">
+              <div class="card">
+                <img src="/img/freecourse2.svg" alt="course" />
+                <div class="card-text">
+                <span class="bookstatus">Free</span>
+                <h5 class="pt-3">A simple guide to savings by the finance village</h5>
+                <p class="pt-1">We're so excited to have you here! You can start learning immediately ave you here! You can start</p>
+                <button>Get Started</button>
+                </div>
+              </div>
+            </div>
+            <div class="col col-lg-4">
+              <div class="card">
+                <img src="/img/freecourse3.svg" alt="course" />
+                <div class="card-text">
+                <span class="bookstatus">Free</span>
+                <h5 class="pt-3">A simple guide to savings by the finance village</h5>
+                <p class="pt-1">We're so excited to have you here! You can start learning immediately ave you here! You can start</p>
+                <button>Get Started</button>
+                </div>
+              </div>
+            </div>
+          </div></center>
+          
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+  </html>

@@ -1,0 +1,143 @@
+@import url(core_stylesheet.css);
+@import url(euclid_stylesheet.css);
+.sidebar {
+  background-color: #E9F2F3;
+  text-align: left;
+}
+.sidebar h4.username {
+  font-size: 14px !important;
+}
+.sidebar .nav-link {
+  padding: 15px 0 15px 0;
+  margin-left: 3rem;
+  color: #00292CB2;
+}
+.sidebar .navbar-nav > .active > a {
+  color: #008E97;
+}
+.sidebar .nav-item > a:hover {
+  color: #008E97 !important;
+}
+.sidebar .sidebarIcon {
+  position: absolute;
+  padding-top: 1rem;
+}
+.sidebar .logout {
+  padding-top: 3rem;
+}
+.sidebar .profileImg {
+  position: absolute;
+  margin-top: -5px;
+}
+.sidebar .username {
+  padding-left: 3rem;
+}
+
+.mininav ul {
+  display: inline;
+  padding-left: 1rem;
+}
+.mininav ul li {
+  display: inline;
+  font-size: 14px;
+  margin-left: -1rem;
+  padding-right: 2rem;
+}
+.mininav .navbar-nav > .active > a {
+  color: #008E97;
+  text-decoration: underline 2px #008E97;
+}
+.mininav a {
+  text-decoration: none;
+  color: #00292C;
+}
+.mininav a:hover {
+  color: #008E97;
+  text-decoration: underline 2px #008E97;
+}
+
+.modal {
+  border-radius: 20px;
+  font-size: 14px;
+}
+.modal h3 {
+  font-family: "core_sans_c45_regular";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 19px;
+}
+.modal button {
+  background-color: #008E97;
+  color: white;
+  height: 50px;
+  width: 169px;
+  left: 103px;
+  top: 457px;
+  border-radius: 10px;
+  border: none;
+  padding: 16px, 10px, 16px, 10px;
+  width: 100%;
+}
+
+.modal-content.px-2 button {
+  background-color: #008E97;
+  color: white;
+  height: 50px;
+  width: 169px;
+  left: 103px;
+  top: 457px;
+  border-radius: 10px;
+  border: none;
+  padding: 16px, 10px, 16px, 10px;
+  width: 70%;
+}
+.modal-content.px-2 p {
+  color: #192850;
+  line-height: 22px;
+}
+.modal-content.px-2 .title {
+  color: #00292CB2;
+}
+.modal-content.px-2 .detail {
+  color: #00292C66;
+}
+
+@media screen and (min-width: 1024px) {
+  .modal-dialog.p {
+    max-width: 60% !important;
+  }
+
+  .sidebar {
+    width: 253px;
+    margin-top: 1rem;
+    position: absolute;
+    background-color: #FAFAFA !important;
+    font-size: 14;
+    padding-top: 10rem;
+    padding-left: 1rem;
+  }
+  .sidebar .container-fluid {
+    display: inline;
+    margin-top: -9rem;
+  }
+  .sidebar .navbar-nav {
+    display: inline;
+  }
+  .sidebar .logout {
+    padding-top: 3rem;
+  }
+  .sidebar .logoutIcon {
+    margin-left: 0rem;
+  }
+  .sidebar h4.username {
+    background-color: #008E9712 !important;
+    padding: 25px 10px 25px 50px;
+    border-radius: 10px;
+  }
+  .sidebar .profileImg {
+    margin-top: 18px;
+    margin-left: 10px;
+  }
+}
+
+/*# sourceMappingURL=component.css.map */

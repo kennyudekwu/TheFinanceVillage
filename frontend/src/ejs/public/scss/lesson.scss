@@ -1,0 +1,65 @@
+@use 'base';
+@mixin button($btnColor: base.$btnColor) {
+    background-color: $btnColor;
+    color: base.$txtColor;
+    height: 43px;
+    width: 134px;
+    border-radius: 10px;
+    padding: 16px, 10px, 16px, 10px;
+    border-style: none;
+    font-size: 14px;
+}
+
+
+.lesson{
+    padding-top: 3rem;
+    
+    .header{
+        padding-top: 4rem;
+    }
+
+    button{
+        @include button($btnColor: base.$btnColor);
+        width: 25%;
+    }
+
+    .founder{
+        height: 187.28590393066406px;
+        width: 100%;
+        height: 100%;
+        margin: 3rem 0 3rem;
+    }
+
+    .card{
+        width: 100%;
+        border-radius: 10px;   
+        padding: 1rem;  
+        margin: 2rem 0; 
+    }
+
+    .navBtns{
+        padding-bottom: 3rem;
+
+        .nextBtn{
+            float: right;
+        }
+    }
+
+    .comments{
+        padding-top: 5rem;
+        padding-bottom: 1rem;
+    }
+
+    .usercomment input{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        height: 78px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {    
+        .card .usercomment{
+            margin-left: 6rem;
+            margin-top: -4.8rem;
+        }
+}

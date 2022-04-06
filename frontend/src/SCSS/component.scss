@@ -27,7 +27,7 @@ $secPadding: 5rem 0 5rem;
     padding: 16px, 10px, 16px, 10px;
 }
 
-.navbar{
+.mainNav.navbar{
     padding: 0 2rem 0 2rem;
     background-color: $priColor;
 
@@ -276,6 +276,52 @@ footer{
     }
 }
 
+.resetModal{
+
+    .btn.continue{
+        margin-top: 0rem;
+        margin-bottom: 3rem;
+    }
+    h5{
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        margin-top: .5rem;
+    }
+}
+
+.sidebar{
+    background-color: #E9F2F3;
+    text-align: left;
+    
+    h4.username{
+        font-size: 14px !important;
+    }
+   
+    .nav-link{
+        padding: 15px 0 15px 0;
+        margin-left: 3rem;
+        color: #00292CB2;
+    }
+
+    .sidebarIcon{
+        position: absolute;
+        padding-top: 1rem;
+    }
+
+    .logout{
+        position: absolute;
+        padding-top: 5rem;
+    }
+
+    .profileImg{
+        position: absolute;
+        margin-top: -5px;
+    }
+
+    .username{
+        padding-left: 3rem;
+    }
+}
 
 @media screen and (min-width: 375px){
     .navbar-toggler{
@@ -322,7 +368,6 @@ footer{
 }
 
 @media screen and (min-width: 820px) {
-
     .topNav{
         background-color: $bgColor !important;
         margin: 0rem -15rem 0 -3rem !important;
@@ -340,7 +385,7 @@ footer{
 }
 
 @media screen and (min-width: 1024px) {
-    .navbar{
+    .mainNav.navbar{
         background-color: $bgColor !important;
     
         .collapse.navbar-collapse{
@@ -419,6 +464,40 @@ footer{
 
         .modal-title{
             font-size: 28px !important;
+        }
+    }
+
+    .sidebar{
+        width: 253px;
+        height: 100vh;
+        position: absolute;
+        background-color: #FAFAFA !important;
+        font-size: 14;
+        padding-top: 7rem;
+        padding-left: 1rem;
+
+        .container-fluid{
+            display: inline;
+            margin-top: -9rem;
+        }
+
+        .navbar-nav{
+            display: inline;
+        }
+
+        .logoutIcon{
+            margin-left: 0rem;
+        }
+
+        h4.username{
+            background-color: #008E9712 !important;
+            padding: 25px 10px 25px 50px;
+            border-radius: 10px;
+        }
+
+        .profileImg{
+            margin-top: 18px;
+            margin-left: 10px;
         }
     }
 }

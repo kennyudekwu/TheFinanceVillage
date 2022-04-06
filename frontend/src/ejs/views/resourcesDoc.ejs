@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/courses.css">
+  <title>Resources | Documents</title>
+</head>
+<body>
+<%- include('./partials/_bstrap.ejs'); %> 
+
+    <div>
+      <%- include('./partials/_nav'); %> 
+      <div class="courses resources">
+        <div class="container">
+          <div class="headerdiv">
+            <h3 class="header">Resources</h3>
+            <p>Was a premium member of the finance village, you have free access to exclusive webinars & events. Click on any to get started</p>
+            <img src="/img/search-normal.png" alt="serachicon" class="searchIcon">
+            <input type="text" placeholder='Search Courses' class="searchBox form-control"/>
+          </div>
+
+          <%- include('./partials/_mininav'); %> 
+
+
+          <div class="row">
+              <div class="col-12 downloadcard">
+                <img src="/img/lessontxt.svg" alt="">
+              Finance Club Worksheet
+              <a href="" class=""><button>Download</button></a>
+              </div>
+              <div class="col-12 downloadcard my-3">
+                <img src="/img/lessontxt.svg" alt="">
+                Finance Club Worksheet
+                <a href="" class=""><button>Download</button></a>
+              </div>
+              <div class="col-12 downloadcard">
+                <img src="/img/lessontxt.svg" alt="">
+                Finance Club Worksheet
+                <a href="" class=""><button>Download</button></a>
+              </div>
+          </div>
+         
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+  </html>

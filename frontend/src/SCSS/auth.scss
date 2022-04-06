@@ -44,10 +44,10 @@ div.login{
         width: 130px;
     }
 
-    .loginCard{
+    .loginCard, .resetPass{
         margin-top: 5rem;
         text-align: center;     
-        margin-bottom: 5rem;
+        margin-bottom: 10rem;
         border-radius: 10px;
         height: 563px;
         width: 336px;
@@ -55,6 +55,14 @@ div.login{
         a{
             color: $priColor;
         }
+    }
+
+    .resetPass{
+        margin-bottom: 2rem;
+    }
+
+    .resetPass.hide{
+        display: none;
     }
 
     .innerCard{
@@ -69,15 +77,16 @@ div.login{
     .loginInput{
         background-color: whitesmoke;
         height: 45px;
+        color: #15253D99;
     }
 
-    .viewPass{
-        height: 21.200000762939453px;
-        width: 21.200000762939453px;
-        margin-left: 15rem;
-        margin-top: 15.5rem;
-        position: absolute;
-    }
+    // .viewPass{
+    //     height: 21.200000762939453px;
+    //     width: 21.200000762939453px;
+    //     margin-left: 15rem;
+    //     margin-top: 15.5rem;
+    //     position: absolute;
+    // }
 
     .forgotPass{
         text-align: right;
@@ -116,6 +125,11 @@ div.login{
         margin-bottom: 15rem !important;
     }
 
+    .resetPass{
+        width: max-content !important;
+        margin-bottom: 0rem !important;
+    }
+
     .innerCard{
         height: max-content !important;
     }
@@ -126,11 +140,19 @@ div.login{
 }
 
 @media only screen and (min-width:1024px) {
-    .loginCard{
+    .loginCard, .resetPass{
         height: 562.977783203125px !important;
         width: 530px !important;
+    }
+
+    .loginCard{
         margin-bottom: 15rem !important;
     }
+
+    .resetPass{
+        margin-bottom: 0rem !important;
+    }
+
     .loginInput{
         height: 53px !important;
     }
