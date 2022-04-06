@@ -1,0 +1,127 @@
+.dashboard, .calendar, .settings, .lesson, .referrals {
+  overflow-x: hidden;
+  background-color: #FAFAFA;
+  font-family: "euclid_circular_bregular";
+  font-size: 14px;
+  text-align: left;
+  word-spacing: 3px;
+  line-height: 26px;
+  padding-top: 3rem;
+  word-wrap: break-word;
+}
+.dashboard h3, .dashboard h5, .calendar h3, .calendar h5, .settings h3, .settings h5, .lesson h3, .lesson h5, .referrals h3, .referrals h5 {
+  font-family: "core_sans_c65_bold";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 2rem;
+}
+.dashboard .header, .calendar .header, .settings .header, .lesson .header, .referrals .header {
+  font-size: 24px;
+  line-height: 37.8px;
+  font-family: "core_sans_c55_medium";
+}
+
+@media only screen and (min-width: 1024px) {
+  .dashboard, .calendar, .settings, .lesson, .referrals {
+    padding: 3rem 5rem 3rem 20rem;
+  }
+}
+.calendar .header {
+  font-size: 24px !important;
+  font-weight: 600;
+}
+.calendar .headerdiv p {
+  margin-top: -1.8rem;
+  margin-bottom: 2rem;
+}
+.calendar .card {
+  padding: 1rem 1rem;
+  width: 814px;
+  border-radius: 10px;
+  border-color: #F58220;
+}
+.calendar .card .lighttext {
+  color: #00292C66;
+}
+.calendar .card .imgwhite {
+  display: none;
+}
+.calendar .card:hover {
+  background-color: #008E97;
+  border: none;
+  color: white;
+}
+.calendar .card:hover .lighttext {
+  color: white;
+}
+.calendar .card:hover .imgwhite {
+  display: unset;
+}
+.calendar .card:hover .imgblack {
+  display: none;
+}
+.calendar .smalltext {
+  font-size: 12px;
+  line-height: 12px;
+}
+.calendar .centralize {
+  padding-top: 0.5rem;
+}
+.calendar .h3 {
+  margin-bottom: 0.2 !important;
+  font-family: "core_sans_c65_bold";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #F58220;
+}
+.calendar .mainDate {
+  padding: 3rem 0 2rem 0;
+}
+.calendar .searchBox {
+  width: 100%;
+  background-color: #008E9721;
+  border-style: none;
+  border-radius: 30px;
+  height: 50px;
+  width: 100%;
+  padding-left: 50px;
+}
+.calendar .searchIcon {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  position: absolute;
+}
+.calendar .col-lg-1 span {
+  display: inline;
+}
+.calendar .smalltext.lighttext {
+  float: right;
+}
+.calendar .smalltext.lgscreen {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .calendar .card {
+    padding: 1rem 2rem;
+  }
+  .calendar .centralize {
+    padding-top: 1rem;
+  }
+  .calendar .col-lg-1 span {
+    display: grid;
+  }
+  .calendar .smalltext.lighttext {
+    float: none;
+  }
+  .calendar .smalltext.smscreen {
+    display: none;
+  }
+  .calendar .smalltext.lgscreen {
+    display: unset;
+  }
+}
+
+/*# sourceMappingURL=calendar.css.map */

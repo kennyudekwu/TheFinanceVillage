@@ -1,0 +1,186 @@
+@use 'base';
+@mixin button($btnColor: base.$btnColor) {
+    background-color: $btnColor;
+    color: base.$txtColor;
+    height: 45px;
+    width: 85px;
+    border-radius: 5px;
+    padding: 16px, 10px, 16px, 10px;
+    border-style: none;
+    font-size: 14px;
+}
+
+.referrals{
+
+    .header{
+        font-size: 24px !important;
+        font-weight: 600;
+    }
+
+    .columns{
+        background-image: url('../img/background.svg');
+        background-size: cover;
+        color: base.$txtColor;
+        height: 124px;
+        border-radius: 5px;
+        margin-top: 2rem;
+        margin-right: .3rem;
+
+        .group{
+            margin: 2.3rem 0 0 4rem;
+        }
+
+        img{
+            position: absolute;
+            margin: 3rem 0 0 1rem;
+        }
+    }
+
+    .colOne{
+        width: 48%;
+    }
+
+    .colTwo{
+        width: 100%;
+    }
+
+
+    h3.header{
+        margin-top: -1rem;
+        margin-bottom: 0rem;
+    }
+
+    .referralh3{
+        margin-top: 5rem;
+        margin-bottom: .7rem
+    }
+
+    .earningsh3{
+        margin-top: 3rem;
+    }
+
+    .link{
+        display: none;
+    }
+
+    .copy{
+        width: 30px;
+        height: 30px;
+        margin-left: -1rem;
+        margin-top: .5rem;
+    }
+
+    .refLink{
+        word-break: break-all;
+    }
+
+    .card{
+        padding: .3rem 1rem 1.7rem 1rem;
+        margin: 0;
+        width: 100%;
+
+        div.grid{
+            display: grid;
+            margin-left: 2.5rem;
+            margin-top: -2.5rem;
+        }
+        
+        span.date{
+            margin-top: -2.5rem;
+            font-size: 12px;
+            color: #00292C66;
+        }
+
+        span.currencyGreen{
+            color: #05B723;
+        }
+
+        span.currencyRed{
+            color: #E45865;
+        }
+
+        img{
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 325px) {  
+.colOne{
+    .group{
+        margin: 2.3rem 0 0 2rem !important;
+        font-size: 12px;
+    }
+
+    img{
+        margin: 3rem 0 0 -.5rem !important;
+    }
+}
+}
+
+@media only screen and (max-width: 380px) and (min-width: 325px) {  
+    .colOne{
+        .group{
+            margin: 2.3rem 0 0 2.5rem !important;
+        }
+    
+        img{
+            margin: 3rem 0 0 0rem !important;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .colOne{
+        width: 48%;
+    }
+    
+    .colTwo{
+        width: 97% !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) {  
+    .columns{
+        margin-right: 1rem;
+    }
+
+    .colOne{
+        width: 250px !important;
+    }
+    
+    .colTwo{
+        width: 250px !important;
+    }
+
+    .link{
+        display: unset;
+    }
+
+    .referrals .card{
+        padding: .3rem 2rem 1.7rem 2rem;
+        width: 90%;
+    }
+
+    div.grid{
+        margin-left: 3rem;
+    }
+    
+    h3.header{
+        margin-top: .5rem !important;
+    }
+
+    .link{
+        display: unset !important;
+    }
+
+    .copy{
+        margin-left: -5rem !important;
+        margin-top: -.2rem !important;
+    }
+
+    span.date{
+        font-size: 14px !important;
+    }
+}

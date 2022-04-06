@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/css/index.css">
+    <title><%= subject %></title>
+  </head>
+  <body> 
+    <%- include('./partials/_bstrap.ejs'); %> 
+    <!-- <div class="container mt-2">
+        <p>Here is the homepage for <%= name %></p>
+        <p><a href="<%= link %>">Unsubscribe</a></p>
+    </div> -->
+    <div>
+      <%- include('./partials/_nav'); %> 
+      <div class="dashboard">
+      <div class="container">
+        <p class="header"><b> Hi <span class='userName'><%= name %>,</span> </b><br /> Welcome to the finance village</p>
+
+        <img src="/img/founder.png" alt="" class='founder'/>
+
+        <p class='pb-4'>As a premium member of the finance village you’ll have acces to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui dolor ultrices et, amet, dictum. Pharetra massa elementum odio eleifend. Nulla duis nunc, bibendum sollicitudin eget mauris nisi. Quis in ipsum ac lacinia faucibus viverra venenatis ac. </p>
+
+        <div class="card red">
+          <img src="/img/danger.svg" alt="" class='icon'/>
+          <span class='cardText'>
+            Please fill in your bank account details on the settings page. We need this information to pay your referral bonus
+          </span>
+        </div>
+
+        <div class="card red">
+          <img src="/img/danger.svg" alt="" class='icon'/>
+          <span class='cardText'>
+          Please fill in your address details on the settings page. We need this information to send your Personal Finance Journal
+          </span>
+        </div>
+
+        <div class="card green">
+          <img src="/img/success.svg" alt="" class='icon'/>
+          <span class='cardText'>
+           Click here to join the telegram group 
+          </span>   
+        </div>
+      </div>
+      </div>
+  </div>
+
+  </body>
+</html>

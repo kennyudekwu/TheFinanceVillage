@@ -1,0 +1,71 @@
+.dashboard, .calendar, .settings, .lesson, .referrals {
+  overflow-x: hidden;
+  background-color: #FAFAFA;
+  font-family: "euclid_circular_bregular";
+  font-size: 14px;
+  text-align: left;
+  word-spacing: 3px;
+  line-height: 26px;
+  padding-top: 3rem;
+  word-wrap: break-word;
+}
+.dashboard h3, .dashboard h5, .calendar h3, .calendar h5, .settings h3, .settings h5, .lesson h3, .lesson h5, .referrals h3, .referrals h5 {
+  font-family: "core_sans_c65_bold";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 2rem;
+}
+.dashboard .header, .calendar .header, .settings .header, .lesson .header, .referrals .header {
+  font-size: 24px;
+  line-height: 37.8px;
+  font-family: "core_sans_c55_medium";
+}
+
+@media only screen and (min-width: 1024px) {
+  .dashboard, .calendar, .settings, .lesson, .referrals {
+    padding: 3rem 5rem 3rem 20rem;
+  }
+}
+.settings .header {
+  font-size: 24px !important;
+  font-weight: 600;
+}
+.settings .topRow {
+  margin-top: 4.5rem;
+}
+.settings .row {
+  margin-bottom: 5rem;
+}
+.settings .fields {
+  padding-bottom: 1rem;
+}
+.settings .fields button {
+  background-color: #008E97;
+  color: white;
+  height: 45px;
+  width: 85px;
+  border-radius: 5px;
+  padding: 16px, 10px, 16px, 10px;
+  border-style: none;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 0;
+}
+.settings .fields .form-control {
+  height: 45px;
+}
+.settings button {
+  background-color: #008E97;
+  color: white;
+  height: 45px;
+  width: 85px;
+  border-radius: 5px;
+  padding: 16px, 10px, 16px, 10px;
+  border-style: none;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/*# sourceMappingURL=settings.css.map */

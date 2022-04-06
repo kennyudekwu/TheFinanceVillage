@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/settings.css">
+    <title>Settings</title>
+</head>
+<body>
+        <%- include('./partials/_bstrap.ejs'); %> 
+        <%- include('./partials/_settingsmodal.ejs'); %> 
+
+    <div>
+        <%- include('./partials/_nav'); %> 
+    <div class="settings">
+        <div class="container">
+            <h3 class="header">My Account</h3>
+
+            <div class="topRow row">
+                <h3>Personal Info</h3>
+
+                <div class="col-lg-3 fields">First Name</div>
+                <div class="col-lg-9 fields">
+                    <input type="text" name="" id="" placeholder="<%= fname %>" class="form-control">
+                </div>
+
+                <div class="col-lg-3 fields">Last Name</div>
+                <div class="col-lg-9 fields">
+                    <input type="text" name="" id="" placeholder="<%= lname %>" class="form-control">
+                </div>
+
+                <div class="col-lg-3 fields">Email</div>
+                <div class="col-lg-9 fields">
+                    <input type="email" name="" id="" placeholder="<%= email %>" class="form-control">
+                </div>
+
+                <div class="col-lg-3 fields">Phone Number</div>
+                <div class="col-lg-9 fields">
+                    <input type="tel" name="" id="" placeholder="<%= phone %>" class="form-control" disabled>
+                </div>
+
+                <div class="col-lg-3 fields">Occupation</div>
+                <div class="col-lg-9 fields">
+                    <input type="text" name="" id="" placeholder="<%= occupation %>" class="form-control">
+                </div>
+
+                <div class="col-lg-3 fields">Date of Birth</div>
+                <div class="col-lg-9 fields">
+                    <input type="date" name="" id="" placeholder="<%= dob %>" class="form-control">
+                </div>  
+
+                <div class="col-lg-3 fields">Password</div>
+                <div class="col-8 col-lg-7 fields">
+                    <input type="password" name="" id="" placeholder="<%= password %>" class="form-control">
+                </div>
+
+                <div class="col-4 col-lg-2 fields"><button type="reset">Reset</button></div>
+            </div>
+
+            <div class="row">
+                <h3>Address Details</h3>
+
+                <div class="col-lg-3 fields">Address</div>
+                <div class="col-lg-9 fields">
+                    <input type="address" name="" id="" placeholder="<%= address %>" class="form-control">
+                </div>
+
+                <div class="col-lg-3 fields">State</div>
+                <div class="col-lg-9 fields">
+                    <input type="state" name="" id="" placeholder="<%= state %>" class="form-control">
+                </div>
+
+                <div class="col-lg-3 fields">City</div>
+                <div class="col-lg-9 fields">
+                    <input type="state" name="" id="" placeholder="<%= city %>" class="form-control">
+                </div>
+
+                <div class="col-lg-3 fields">Additional Information</div>
+                <div class="col-lg-9 fields">
+                    <input type="state" name="" id="" placeholder="<%= addinfo %>" class="form-control">
+                </div>
+
+                <div class="col"><button type="button" data-toggle="modal" data-target="#exampleModal">Save Address Details</button></div>
+            </div>
+
+            <div class="row">
+                <h3>Bank Details</h3>
+
+                <div class="col-lg-3 fields">Account Name</div>
+                <div class="col-lg-9 fields">
+                    <input type="text" name="" id="" placeholder="<%= accname %>" class="form-control">
+                </div>
+
+                <div class="col-lg-3 fields">Bank Name</div>
+                <div class="col-lg-9 fields">
+                    <input type="text" name="" id="" placeholder="<%= bankname %>" class="form-control">
+                </div>
+
+                <div class="col-lg-3 fields">Account Number</div>
+                <div class="col-lg-9 fields">
+                    <input type="number" name="" id="" placeholder="<%= accno %>" class="form-control">
+                </div>
+
+                <div class="col"><button type="button" data-toggle="modal" data-target="#exampleModal">Save Bank Account Details</button></div>            
+            </div>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>

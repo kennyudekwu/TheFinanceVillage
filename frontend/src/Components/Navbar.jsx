@@ -4,7 +4,7 @@ import logo from '../Img/logo.svg'
 
 const Navbar = () => {
   return (
-  <nav className="navbar navbar-expand-lg navbar-light">
+  <nav className="mainNav navbar navbar-expand-lg navbar-light">
   <div className="container-fluid">
     <i className="topNav">
     <NavLink exact to ="/" className="navbar-brand" href="#">

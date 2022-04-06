@@ -1,49 +1,49 @@
 @import url(core_stylesheet.css);
 @import url(euclid_stylesheet.css);
-.navbar {
+.mainNav.navbar {
   padding: 0 2rem 0 2rem;
   background-color: #008E97;
 }
-.navbar .topNav {
+.mainNav.navbar .topNav {
   background-color: #f8f9fa;
   margin: 0rem -15rem 0 -4rem;
 }
-.navbar .topNav .navbar-brand {
+.mainNav.navbar .topNav .navbar-brand {
   margin-right: 6rem;
   padding-left: 2rem;
 }
-.navbar .topNav .navbar-toggler {
+.mainNav.navbar .topNav .navbar-toggler {
   margin-right: 10rem;
   margin-left: 1rem;
 }
-.navbar .collapse.navbar-collapse {
+.mainNav.navbar .collapse.navbar-collapse {
   text-align: left;
 }
-.navbar .logoNav {
+.mainNav.navbar .logoNav {
   height: 130px;
   width: 130px;
 }
-.navbar .nav-item {
+.mainNav.navbar .nav-item {
   padding: 0 1rem 0 1rem;
 }
-.navbar .nav-item a {
+.mainNav.navbar .nav-item a {
   text-decoration: none;
 }
-.navbar .nav-item .nav-link {
+.mainNav.navbar .nav-item .nav-link {
   text-align: left !important;
   color: white;
 }
-.navbar .login {
+.mainNav.navbar .login {
   color: white;
 }
-.navbar .login:hover {
+.mainNav.navbar .login:hover {
   background-color: #008E97;
   color: white;
 }
-.navbar .nav-link.signup {
+.mainNav.navbar .nav-link.signup {
   color: #F58220;
 }
-.navbar .authLink {
+.mainNav.navbar .authLink {
   font-size: 12px;
 }
 
@@ -212,6 +212,44 @@ footer .footerRights {
   width: 150px;
 }
 
+.resetModal .btn.continue {
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+}
+.resetModal h5 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.sidebar {
+  background-color: #E9F2F3;
+  text-align: left;
+}
+.sidebar h4.username {
+  font-size: 14px !important;
+}
+.sidebar .nav-link {
+  padding: 15px 0 15px 0;
+  margin-left: 3rem;
+  color: #00292CB2;
+}
+.sidebar .sidebarIcon {
+  position: absolute;
+  padding-top: 1rem;
+}
+.sidebar .logout {
+  position: absolute;
+  padding-top: 5rem;
+}
+.sidebar .profileImg {
+  position: absolute;
+  margin-top: -5px;
+}
+.sidebar .username {
+  padding-left: 3rem;
+}
+
 @media screen and (min-width: 375px) {
   .navbar-toggler {
     margin-left: 5rem !important;
@@ -262,24 +300,24 @@ footer .footerRights {
   }
 }
 @media screen and (min-width: 1024px) {
-  .navbar {
+  .mainNav.navbar {
     background-color: #f8f9fa !important;
   }
-  .navbar .collapse.navbar-collapse {
+  .mainNav.navbar .collapse.navbar-collapse {
     background-color: #f8f9fa !important;
   }
-  .navbar .topNav {
+  .mainNav.navbar .topNav {
     margin: 0 !important;
   }
-  .navbar .topNav .navbar-brand {
+  .mainNav.navbar .topNav .navbar-brand {
     margin-right: 0 !important;
     padding-left: 0 !important;
   }
-  .navbar .topNav .navbar-toggler {
+  .mainNav.navbar .topNav .navbar-toggler {
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
-  .navbar .login {
+  .mainNav.navbar .login {
     width: 100px;
     padding-top: 12.5px;
     padding-bottom: 12.5px;
@@ -288,7 +326,7 @@ footer .footerRights {
     border-style: solid 1px;
     border-radius: 10px;
   }
-  .navbar .signup {
+  .mainNav.navbar .signup {
     background-color: #F58220;
     color: white;
     height: 50px;
@@ -300,19 +338,19 @@ footer .footerRights {
     width: 195px;
     color: white !important;
   }
-  .navbar .nav-link {
+  .mainNav.navbar .nav-link {
     color: black !important;
   }
-  .navbar .login.authLink {
+  .mainNav.navbar .login.authLink {
     margin-left: 1rem;
     color: #008E97 !important;
     text-align: center !important;
   }
-  .navbar .login.authLink:hover {
+  .mainNav.navbar .login.authLink:hover {
     background-color: #008E97 !important;
     color: white !important;
   }
-  .navbar .signup.authLink {
+  .mainNav.navbar .signup.authLink {
     margin-left: 0.1rem !important;
     color: white !important;
     text-align: center !important;
@@ -332,6 +370,35 @@ footer .footerRights {
 
   .signupModal .modal-title {
     font-size: 28px !important;
+  }
+
+  .sidebar {
+    width: 253px;
+    height: 100vh;
+    position: absolute;
+    background-color: #FAFAFA !important;
+    font-size: 14;
+    padding-top: 7rem;
+    padding-left: 1rem;
+  }
+  .sidebar .container-fluid {
+    display: inline;
+    margin-top: -9rem;
+  }
+  .sidebar .navbar-nav {
+    display: inline;
+  }
+  .sidebar .logoutIcon {
+    margin-left: 0rem;
+  }
+  .sidebar h4.username {
+    background-color: #008E9712 !important;
+    padding: 25px 10px 25px 50px;
+    border-radius: 10px;
+  }
+  .sidebar .profileImg {
+    margin-top: 18px;
+    margin-left: 10px;
   }
 }
 @media screen and (min-width: 1110px) {

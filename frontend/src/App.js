@@ -5,6 +5,8 @@ import Aboutus from './Pages/aboutus'
 import Login from './Pages/login'
 import Signup from './Pages/signup';
 import Testimonials from './Pages/testimonials';
+import ResetOne from './Pages/resetpassOne';
+import ResetTwo from './Pages/resetpassTwo';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route exact path="/testimonials" component={Testimonials}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/signup" component={Signup}/>
+        <Route exact path="/resetone" component={ResetOne}/>
+        <Route exact path="/resettwo" component={ResetTwo}/>
       </Switch>
     </div>
     </Router>

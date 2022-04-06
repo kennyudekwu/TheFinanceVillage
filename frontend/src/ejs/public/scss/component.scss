@@ -1,0 +1,182 @@
+@import url(core_stylesheet.css);
+@import url(euclid_stylesheet.css);
+
+$bgColor: #f8f9fa;
+$priColor: #008E97;
+$secColor: #F58220;
+$bookColor: #F9EADE;
+$altColor: #014448;
+$textColor: white;
+$newColor: #F582200D;
+$alttextColor: #00292C;
+$secPadding: 5rem 0 5rem;
+
+@mixin theme($theme: $bgColor) {
+    background: $theme;
+    padding: $secPadding;
+}
+
+@mixin button($btnColor: $priColor) {
+    background-color: $btnColor;
+    color: $textColor;
+    height: 50px;
+    width: 169px;
+    left: 103px;
+    top: 457px;
+    border-radius: 10px;
+    border: none;
+    padding: 16px, 10px, 16px, 10px;
+}
+
+.sidebar{
+    background-color: #E9F2F3;
+    text-align: left;
+    
+    h4.username{
+        font-size: 14px !important;
+    }
+   
+    .nav-link{
+        padding: 15px 0 15px 0;
+        margin-left: 3rem;
+        color: #00292CB2;
+    }
+
+    .navbar-nav > .active > a {
+        color: $priColor;
+    }
+
+    .nav-item > a:hover {
+        color: $priColor !important;
+    }    
+
+    .sidebarIcon{
+        position: absolute;
+        padding-top: 1rem;
+    }
+
+    .logout{
+        padding-top: 3rem;
+    }
+
+    .profileImg{
+        position: absolute;
+        margin-top: -5px;
+    }
+
+    .username{
+        padding-left: 3rem;
+    }
+}
+
+.mininav{
+    ul{
+        display: inline;
+        padding-left: 1rem;
+    }
+
+    ul li{
+        display: inline;
+        font-size: 14px;
+        margin-left: -1rem;
+        padding-right: 2rem;
+    }
+
+    .navbar-nav > .active > a {
+        color: $priColor;
+        text-decoration: underline 2px $priColor;
+    }
+
+    a{
+        text-decoration: none;
+        color: $alttextColor;
+    }
+
+    a:hover{
+        color: $priColor;
+        text-decoration: underline 2px $priColor;
+    }
+}
+
+.modal{
+    border-radius: 20px;
+    font-size: 14px;
+
+    h3{
+        font-family: 'core_sans_c45_regular';
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 19px;
+    }
+
+    button{
+        @include button($btnColor: $priColor);
+        width: 100%;
+    }
+}
+
+
+.modal-content.px-2{
+    button{
+        @include button($btnColor: $priColor);
+        width: 70%;
+    }
+
+    p{
+        color: #192850;
+        line-height: 22px;
+    }
+
+    .title{
+        color: #00292CB2;
+    }
+
+    .detail{
+        color: #00292C66;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .modal-dialog.p{
+        max-width: 60% !important;
+    }    
+
+    .sidebar{
+        width: 253px;
+        margin-top: 1rem;
+        // height: 100vh;
+        position: absolute;
+        background-color: #FAFAFA !important;
+        font-size: 14;
+        padding-top: 10rem;
+        padding-left: 1rem;
+
+        .container-fluid{
+            display: inline;
+            margin-top: -9rem;
+        }
+
+        .navbar-nav{
+            display: inline;
+        }
+
+        .logout{
+            padding-top: 3rem;
+        }
+
+        .logoutIcon{
+            margin-left: 0rem;
+        }
+
+        h4.username{
+            background-color: #008E9712 !important;
+            padding: 25px 10px 25px 50px;
+            border-radius: 10px;
+        }
+
+        .profileImg{
+            margin-top: 18px;
+            margin-left: 10px;
+        }
+    }
+}
