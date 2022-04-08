@@ -17,7 +17,7 @@ div.joinus .container {
 div.joinus .container .col-12.col-md-6 {
   padding-bottom: 7rem;
 }
-div.joinus .container .card {
+div.joinus .container .card-joinus {
   height: 462px;
   width: 321px;
   left: 0px;
@@ -26,7 +26,7 @@ div.joinus .container .card {
   border-top: 5px solid;
   padding-top: 38px;
 }
-div.joinus .container .card h5 {
+div.joinus .container .card-joinus h5 {
   font-size: 16px;
   line-height: 16px;
   margin-bottom: 5px;
@@ -94,7 +94,7 @@ div.joinus .container .accordion {
 }
 
 @media only screen and (max-width: 375px) {
-  .card {
+  .card-joinus {
     height: 462px;
     width: 240px !important;
     left: 0px;
