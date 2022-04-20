@@ -7,6 +7,11 @@ Joi.objectId = require('joi-objectid')(Joi);
 const voucher_codes = require('voucher-code-generator');
 
 const userSchema = new mongoose.Schema({
+loggedIn: {
+    type: Boolean,
+    default: false
+},
+
 first_name: {
     type: String,
     required: true,
@@ -94,6 +99,8 @@ number_referred: {
     default: 0
 },
 
+// add referred members, embedded document
+
 net_referral_income: {
     type: Number,
     default: 0
@@ -143,8 +150,10 @@ package: {
 courses: {
 
     // Array of the different course objectId(s) paid for
+    // this is a hybrid of embedded and referenced
     type: [new mongoose.Schema({
-        // pass id of the course when storing
+        // pass id of the course when storing which reflects the actual id
+        // of the course stored on the "courses" db
 
         /*
         In the courses GET endpoint, the courses as well as their embedded
@@ -208,11 +217,11 @@ function validateUser (user) {
         last_name: Joi.string().min(2).max(40).required(),
         email: Joi.string().min(5).max(255).required().email().required(),
         phone_number: Joi.string().pattern(/^[0-9]+$/)
-                         .min(4).max(20).required(),
+                        .min(4).max(20).required(),
         reference: Joi.string(),
         country: Joi.string().min(2).max(40).required(),
         password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/)
-                     .required(),
+                    .required(),
         package: Joi.string().required(),
         date_of_birth: Joi.date(),
         occupation: Joi.string().required()
@@ -221,5 +230,5 @@ function validateUser (user) {
     return schema.validate(user);
 }
 
-exports.User = User;
-exports.validateUser = validateUser;
+module.exports.User = User;
+module.exports.validateUser = validateUser;

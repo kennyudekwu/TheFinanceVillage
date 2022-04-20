@@ -2,9 +2,9 @@ const auth = require('../middleware/auth');
 const bcrypt = require('bcryptjs');
 const _= require('lodash');
 const {User, validateUser} = require('../models/users');
-const {Package, validatePckage} = require('../models/packages');
+const {Subscriber} = require('../models/subscribers');
+const {Package} = require('../models/packages');
 const express = require('express');
-const jwt = require('jsonwebtoken');
 const router = express.Router();
 const config = require('config');
 const fetch = require('node-fetch');
@@ -52,9 +52,13 @@ router.post('/register', async (req, res) => {
     }
 
     user = new User(req.body);
+
+    const subscriber = await Subscriber.findOne({email: user.email});
+    if (subscriber) user.is_subscribed = true;
+
     const salt = bcrypt.genSaltSync(10);
 
-    user.password = await bcrypt.hashSync(user.password, salt);
+    user.password = await bcrypt.hashSync(password, salt);
 
     user.referral_id = await idGeneration(user);
     await user.save();
@@ -63,14 +67,16 @@ router.post('/register', async (req, res) => {
 
     // Sending email by calling endpoint for verification link
     sendMail(token).then(response => response.json())
-                   .then(data => {
+                .then(data => {
                     // Frontend checks "sentEmailVerificationLink" property
                     // before displaying "email sent" modal
 
-                        res.header('x-auth-token', token).send(data);
+                        // res.header('x-auth-token', token).send(data);
+                        res.send(data);
                     }).catch( err => {
-                        res.header('x-auth-token', token).send(user);
-                        console.error('Error: ', err);
+                        // res.header('x-auth-token', token).send(user);
+                        res.send(user);
+                        // console.error('Error: ', err);
                     });
 
 });

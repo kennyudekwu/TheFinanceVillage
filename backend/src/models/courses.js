@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
 
-const Package = new mongoose.model('Package', new mongoose.Schema({
+const Course = new mongoose.model('Course', new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -16,24 +16,35 @@ const Package = new mongoose.model('Package', new mongoose.Schema({
         type: String,
         required: true
     },
+    content: {
+        type: String,
+        required: true
+    },
     discount: {
         type: Number,
         default: 0
     },
-    plan_code: String
+    video_content_id: {
+        type: [Number],
+        default: [],
+        required: true
+    }
 }));
 
-function validatePackage (package) {
+function validateCourse (course) {
     const schema = Joi.object({
         name: Joi.string().min(3).required(),
         price: Joi.number().required(),
         description: Joi.string().required(),
+        content: Joi.string().required(),
         discount: Joi.number().min(0.01).max(1),
-        plan_code: Joi.string().required(),
+        video_content_id: Joi.array()
+                            .items(Joi.number())
+                            .required(),
     });
 
-    return schema.validate(package);
+    return schema.validate(course);
 }
 
-module.exports.Package = Package;
-module.exports.validatePackage = validatePackage;
+module.exports.Course = Course;
+module.exports.validateCourse = validateCourse;

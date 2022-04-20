@@ -1,28 +1,14 @@
 const auth = require('../middleware/auth');
 const express = require('express');
 const router = express.Router();
-const config = require('config');
-const nodemailer = require('nodemailer');
-// const fetch = require('node-fetch');
-
-// Google Mailing Parameters
-const client_id = config.get('client_id');
-const client_secret = config.get('client_secret');
-const refresh_token = config.get('refresh_token');
-const redirect_uri = config.get('redirect_uri');
-
-const {google} = require('googleapis');
 const { User } = require('../models/users');
+const {sendingMail} = require('../email_content/sendMailFunction');
 
+// Using another import convention to spice things up a lil
+// import generatorTemplate from '../email_content/emailTemplateGenerator';
+// to use the above ES6 technique, we have to add "type":"module" to 'package.json'
 
-// Creating App Client to carry out the mail-sending procedure
-const OAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uri);
-
-/*
-    Making known the API and email address (via the refresh token) used to send the
-    mail already known to the system
-*/
-OAuth2Client.setCredentials({refresh_token: refresh_token});
+const generatorTemplate = require('../email_content/emailTemplateGenerator');
 
 router.get('/send-link', auth,  async(req, res) => {
     const token = req.header('x-auth-token');
@@ -30,27 +16,34 @@ router.get('/send-link', auth,  async(req, res) => {
     let user = await User.findById(req.user._id).select('-password');
 
     if (!user) return res.status(400).send('User does not exist');
-    else if (user.sentEmailVerficationLink === true) return res.status(400).send('Link already sent');
+    if (user.sentEmailVerficationLink === true) return res.status(400).send('Link already sent');
 
     // Generate email verification link to be sent to the user
-    const mailOption = {
-        from: 'Finance Village <kennyudekwu@gmail.com>',
-        to: user.email,
-        subject: 'Email Verification',
-        text: `
-            ${user.first_name}, thanks for registering on our platform
-            Please verify your email to continue...
-            Go to the below url to verify your email address
-            http://${req.headers.host}/api/email/verify-email?token=${token}
-            `,
-        html: `
-            <h2>${user.first_name}, thanks for registering on our platform</h2>
-            <h4>Please verify your email to continue...</h4>
-            <a href="http://${req.headers.host}/api/email/verify-email?token=${token}">Click here to verify your email</a>
-            `
-    };
+    const options = generatorTemplate('Finance Village <kennyudekwu@gmail.com>',
+    user.email, user.first_name,
+    `http://${req.headers.host}/api/email/verify-email?token=${token}`);
 
-    sendingMail(mailOption).then(async (mail) => {
+    const mailOptions = options[0];
+    const handlebarOptions = options[1];
+
+    // const mailOption = {
+    //     from: 'Finance Village <kennyudekwu@gmail.com>',
+    //     to: user.email,
+    //     subject: 'Email Verification',
+    //     text: `
+    //         ${user.first_name}, thanks for registering on our platform
+    //         Please verify your email to continue...
+    //         Go to the below url to verify your email address
+    //         http://${req.headers.host}/api/email/verify-email?token=${token}
+    //         `,
+    //     html: `
+    //         <h2>${user.first_name}, thanks for registering on our platform</h2>
+    //         <h4>Please verify your email to continue...</h4>
+    //         <a href="http://${req.headers.host}/api/email/verify-email?token=${token}">Click here to verify your email</a>
+    //         `
+    // };
+
+    sendingMail(mailOptions, handlebarOptions).then(async (mail) => {
         // declaring the format of response data
         const result = {};
         user.sent_email_link = true;
@@ -80,15 +73,15 @@ router.get('/send-link', auth,  async(req, res) => {
 });
 
 router.get('/verify-email', async (req, res) => {
-    const user = await User.findOne({email_token: req.query.token});
+    let user = await User.findOne({email_token: req.query.token});
     if (!user) return res.status(400).send('Invalid token');
     // return redirection to home page afterwards when home html is completed
 
     user.email_token = null;
     user.is_verified = true;
-    uaer = await user.save();
+    user = await user.save();
 
-    // render email verify success page
+    // render email verify success page only. Do not send any mail stating email has been verified
     const mailOption = {
         from: 'Finance Village <kennyudekwu@gmail.com>',
         to: user.email,
@@ -105,12 +98,13 @@ router.get('/verify-email', async (req, res) => {
             `
     };
 
-        //display 'verification successful page'
+        // display 'verification successful page'
         // redirect to payment page with the token in the header
 
 
     // if there is a mail-sending ish, do the needful but still display success page
     sendingMail(mailOption).then(() => {
+        console.log("Error after the mailing function...")
         // initializePayment(req.query.token);
         // res.header('x-auth-token', req.query.token);
         // display email verification success page and wait for 2.5 seconds before redirecting
@@ -119,26 +113,7 @@ router.get('/verify-email', async (req, res) => {
 
 })
 
-async function sendingMail (msg) {
-    const accessToken = await OAuth2Client.getAccessToken();
 
-    // Mail sender details
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            type: 'OAuth2',
-            user: 'kennyudekwu@gmail.com',
-            clientId: client_id,
-            clientSecret: client_secret,
-            refreshToken: refresh_token,
-            accessToken: accessToken
-        }
-    });
-
-    const mail = await transporter.sendMail(msg);
-    return mail;
-
-}
 
 // async function initializePayment (token) {
 //     // using 'fetch' to GET from payment endpoint
@@ -152,4 +127,4 @@ async function sendingMail (msg) {
 // }
 
 
-module.exports = router;
+module.exports.router = router;

@@ -1,9 +1,10 @@
 require('express-async-errors');
-
+const morgan = require('morgan');
 const winston = require('winston');
 const express = require('express');
 const app = express();
 
+if(app.get('env') === 'development') app.use(morgan('tiny'));
 
 require('./startup/routes')(app);
 
