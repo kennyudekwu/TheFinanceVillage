@@ -23,7 +23,7 @@ const login = () => {
                 {/* <img className='viewPass' src={eye} alt="view password" /> */}
                 <Link exact to="resetone" className='forgotPass'>Forgot Password ? </Link>
 
-                <a href='http://localhost:5000'><button className='btn loginBtn'> Proceed </button></a>
+                <a href="../express/public/index.ejs"><button className='btn loginBtn'> Proceed </button></a>
 
                 <p className='policy'>I have read, understood and I agree to Finance Villlage <Link exact to="">Privacy Policy </Link> and <Link exact to=""> Terms and conditions</Link> </p>
             </div>

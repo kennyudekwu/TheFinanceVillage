@@ -26,7 +26,7 @@ const joinus = () => {
         <center>
           <div className="row">
               <div className="col-12 col-md-6">
-                <div className="card free">
+                <div className="card card-joinus free">
                 <div className="card-body">
                 <div className="card-content">
                 <h2 className="card-title">$ 0.00 <span> /year</span></h2>
@@ -48,7 +48,7 @@ const joinus = () => {
               </div>  
 
               <div className="col-12 col-md-6">
-                <div className="card paid">
+                <div className="card card-joinus paid">
                 <div className="card-body">
                 <div className="card-content">
                 <h2 className="card-title">$ 50.00 <span> /year</span></h2>
