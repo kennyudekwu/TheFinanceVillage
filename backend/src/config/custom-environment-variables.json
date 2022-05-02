@@ -8,5 +8,9 @@
     "refresh_token": "refresh_token",
     "send_email": "emailLink",
     "paystack_key": "paystack_key",
-    "payment_gateway": "payment_endpoint"
+    "payment_gateway": "payment_endpoint",
+    "bucket": "bucket_name",
+    "bucket_region": "bucket_location",
+    "aws_access_key": "cloud_access_key",
+    "aws_secret_access_key": "cloud_secret_key"
 }

@@ -7,10 +7,10 @@ Joi.objectId = require('joi-objectid')(Joi);
 const voucher_codes = require('voucher-code-generator');
 
 const userSchema = new mongoose.Schema({
-loggedIn: {
-    type: Boolean,
-    default: false
-},
+// loggedIn: {
+//     type: Boolean,
+//     default: false
+// },
 
 first_name: {
     type: String,

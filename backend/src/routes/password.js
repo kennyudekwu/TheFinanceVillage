@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 
-const {sendMail} = require('../routes/email');
+const {sendMail} = require('./email');
 
 const {User} = require('../models/users');
 
@@ -84,7 +84,7 @@ router.put('/reset-password', async (req, res) => {
 function validatePassword (passwordBody) {
     const schema = Joi.object({
         password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/)
-                     .required()
+                    .required()
     })
 
     return schema.validate(passwordBody);

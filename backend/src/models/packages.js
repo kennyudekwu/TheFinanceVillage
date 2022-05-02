@@ -20,6 +20,10 @@ const Package = new mongoose.model('Package', new mongoose.Schema({
         type: Number,
         default: 0
     },
+    interval: {
+        type: String,
+        required: true
+    },
     plan_code: String
 }));
 
@@ -29,7 +33,13 @@ function validatePackage (package) {
         price: Joi.number().required(),
         description: Joi.string().required(),
         discount: Joi.number().min(0.01).max(1),
-        plan_code: Joi.string().required(),
+        interval: Joi.string().required(),
+        // we'd want to use the returned plan_code from paystack's api
+        // to then store the package on the db.
+        // However, one can still store an already created plan (created
+        // via paystakc's admin interface) on the db by simply calling the
+        // POST endpoint to store the package
+        plan_code: Joi.string().required()
     });
 
     return schema.validate(package);

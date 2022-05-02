@@ -81,6 +81,7 @@ router.post('/register', async (req, res) => {
 
 });
 
+
 // Recursive function to check for already existing unique 'referral_id's' in the database
 async function idGeneration(user) {
     let ref_code = user.generateReferralCode();
