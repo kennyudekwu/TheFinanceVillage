@@ -20,8 +20,13 @@ const Course = new mongoose.model('Course', new mongoose.Schema({
     // storing the different videos attributed to a particular course
     // as well as the different ids associated with the different videos
     // to enable tracking user progress
-    content: {
-        type: [new mongoose.Schema({
+
+    // storing modules that contain videos attributed to each of them
+    modules: {
+    type: [new mongoose.Schema({
+        module_name: String,
+        videos: {
+            type: [new mongoose.Schema({
                     // 'video_id' will be generated automatically
                     // by mongodb for each subdocument (video) stored
                     name: { // name of the individual videos
@@ -32,10 +37,14 @@ const Course = new mongoose.model('Course', new mongoose.Schema({
                             type: String,
                             required: true
                     }
-                })],
+                })]
+            },
         default: [],
         required: true
+    })],
+    default: []
     },
+
     discount: {
         type: Number,
         default: 0

@@ -50,6 +50,11 @@ is_subscribed: {
     default: false
 },
 
+is_subscribed_to_newsLetter: {
+    type: Boolean,
+    default: false
+},
+
 phone_number: {
     type: String,
     required: true,
@@ -132,7 +137,7 @@ created_at: {
     type: Date,
     required: true,
     default: Date.now()
-  },
+},
 
 package: {
     /*
@@ -169,7 +174,10 @@ courses: {
 
         // name won't be returned
 
-        // corresponds to the video 'id' completed by the user
+        // corresponds to the video 'id' of videos of the modules completed by the user
+        // no need to create another "super" embedded array document theat encompasses
+        // "completed" in an attempt to accomodate the modules. Frontend should just use
+        // the completed videos' object ids stored to make their update on the UI
         completed: {
             type: [Number],
             default: [],
@@ -218,6 +226,7 @@ function validateUser (user) {
         email: Joi.string().min(5).max(255).required().email().required(),
         phone_number: Joi.string().pattern(/^[0-9]+$/)
                         .min(4).max(20).required(),
+        is_subscribed_to_newsLetter: Joi.boolean(),
         reference: Joi.string(),
         country: Joi.string().min(2).max(40).required(),
         password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/)

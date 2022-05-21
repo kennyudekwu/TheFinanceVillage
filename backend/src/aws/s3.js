@@ -23,7 +23,7 @@ function uploadFile(file) {
     // pass in file name from multer containing the path and the file name
     const fileStream = fs.createReadStream(file.path);
 
-    console.log(file);
+    // console.log(file);
     const uploadParams = {
         Bucket: bucketName,
         Body: fileStream,

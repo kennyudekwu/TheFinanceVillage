@@ -59,24 +59,37 @@ router.get('/verify-callback', async(req, res) => {
                         // presence of plan property makes for
                         // handling subscriptions
                         if (payload.data.plan) {
+                            const user = await User.findOne({email: payload.data.customer.email});
+                            if (!user) return res.status(400).send('Invalid user'); // this would be handled by the 'then' block
                             if (payload.data.status === 'success') {
-                                const user = await User.findOne({email: payload.data.customer.email});
-                                if (!user) return res.status(401).send('Invalid user');
                                 user.is_subscribed = true;
                                 // redirect user back to home page
-                                return user.save()
+                                return user.save();
                             } else {
-                                  // render transaction failed page
-                                  // or redirect to dashboard
-                                return 'Failed transaction';
+                                // use the timeout function to render the unsuccessful page for some seconds
+                                // that states that shortly the user will be redirected to his/her dashboard then
+                                // run timeout function here
+                                return user;
                             }
                         }
                         // another property should mark how "course" charges
+                        // updating and adding course to user document correspondingly
                         // should be verified and handled for each user
                         })
                         // redirect to dashboard
-                        .then(customer => res.status(200).send(customer));
-
+                        .then(async () => {
+                            // generate token from 'login' endpoint first
+                            // send token to frontend who will then call "dashboard"
+                            // for the users's data before passing to the
+                            // template engine
+                            return await automaticLogin(user.generateAuthToken());
+                            // we don't care about the result. The token being sent will always
+                            // be genuine because it's being generated from a valid user document if
+                            // and only if the user document exist
+                        });
+                        // if something causes the system to throw an error that hasn't been addressed
+                        // create a "something failed" page or use your already defined error middleware
+                        // handler the returns plainly "Something failed"
 });
 
 /*
@@ -99,7 +112,7 @@ async function subscribe (email, amount, plan) {
                 plan: plan
             })
             });
-}
+};
 
 // course payment handler in progress
 async function charge (email, amount) {
@@ -115,7 +128,7 @@ async function charge (email, amount) {
                 amount: amount
             })
             });
-}
+};
 
 async function verify (ref) {
     // paystack's transaction verification endpoint
@@ -126,6 +139,21 @@ async function verify (ref) {
                 'Authorization': `Bearer ${config.get('paystack_key')}`
             }
             });
-}
+};
+
+async function automaticLogin (ref) {
+    // frontend's automatic login endpoint
+    return await fetch(`http://${req.headers.host}/api/login/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                token: token
+            })
+            });
+};
 
 module.exports = router;
+// export payment module (charge and verify) in order to allow for usability by the "events" and possibly
+// "webinars" routers, to allow users pay for events and webinars

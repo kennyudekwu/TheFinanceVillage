@@ -25,17 +25,17 @@ app.get('/courses', (request, response) => {
 });
 
  // courses description page
- app.get('/courseDescription', (request, response) => {
+app.get('/courseDescription', (request, response) => {
   response.render('courseDescription');
 });
 
  // course lessons page
- app.get('/courseLesson', (request, response) => {
+app.get('/courseLesson', (request, response) => {
   response.render('courseLesson');
 });
 
  // webinars and events page
- app.get('/webinars', (request, response) => {
+app.get('/webinars', (request, response) => {
   response.render('webinars');
 });
 
@@ -86,3 +86,13 @@ app.get('/referrals', (request, response) => {
     treferred: '1'
   });
 });
+
+// endpoint for automatic login
+/*
+Requirements:
+- should receive user token from backend
+- add this token to the header of request to be sent in the next step
+- request user data from backend's 'dashboard' endpoint with token in header of request
+- pass necessary data to the templating engine to render user dashboard accordingly
+- respond to backend server that called you by rendering the dashboard of the user
+*/

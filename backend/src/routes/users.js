@@ -54,7 +54,7 @@ router.post('/register', async (req, res) => {
     user = new User(req.body);
 
     const subscriber = await Subscriber.findOne({email: user.email});
-    if (subscriber) user.is_subscribed = true;
+    if (subscriber) user.is_subscribed_to_newsLetter = true;
 
     const salt = bcrypt.genSaltSync(10);
 
@@ -67,15 +67,27 @@ router.post('/register', async (req, res) => {
 
     // Sending email by calling endpoint for verification link
     sendMail(token).then(response => response.json())
+                // do not reveal the entire data. Only the dashboard endpoint and the login
+                // endpoint does so.
                 .then(data => {
-                    // Frontend checks "sentEmailVerificationLink" property
+                    // Frontend checks "sent_email_link" property
                     // before displaying "email sent" modal
 
                         // res.header('x-auth-token', token).send(data);
-                        res.send(data);
+                        // 'data' contains information about the mail as well as
+                        // the user object where frontend can then check if the
+                        // mail was sent via the "sent_email_link" property
+                        res.send(data.user.sent_email_link);
                     }).catch( err => {
                         // res.header('x-auth-token', token).send(user);
-                        res.send(user);
+
+                        // this is here in case the link never gets sent.
+                        // frontend can still use this information on the
+                        // users dashboard. If the user wants the email to
+                        // be sent again, frontend would check the "sent_email_link" property
+                        // to make sure the mail wasn't sent before before re-initiating
+                        // another link-sending procedure with the mailing endpoint
+                        res.send(user.sent_email_link);
                         // console.error('Error: ', err);
                     });
 
@@ -86,9 +98,8 @@ router.post('/register', async (req, res) => {
 async function idGeneration(user) {
     let ref_code = user.generateReferralCode();
     const user_exist = await User.findOne({referral_id: ref_code});
-    if (user_exist) idGeneration();
-    return ref_code[0];
-
+    if (!user_exist) return ref_code[0];  // reverse base case for recursive call
+    else return idGeneration(user);
 }
 
 async function sendMail (email_token) {

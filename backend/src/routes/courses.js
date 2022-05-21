@@ -32,29 +32,29 @@ const unlinkFile = util.promisify(fs.unlink);
 // course's video to be stored on the db
 
 
-router.post('/post-video', [auth, admin], upload.single('video'), // middleware for accepting video for storing on the server
+router.post('/post-video',  upload.single('video'), // middleware for accepting video for storing on the server
     async (req, res) => {
     // 'video' should be the name of the file passed in via a form on the frontend
     // accept the file (video) and the name of the file - store this in s3
     const file = req.file;
     const result = await uploadFile(file);
     await unlinkFile(file.path);
-    // res.send(result);
+    res.send(result.Location); // aws link response
 
     // below is the course url to be stored on mongodb alongside
     // the course
-    res.send({videoPath: `http://${req.headers.host}/api/courses/view-video/${result.Key}`});
+    // res.send({videoPath: `http://${req.headers.host}/api/courses/view-video/${result.Key}`});
 });
 
-// endpoint to display video to the client, converting binary stored on
-// aws to the actual video. It takes in the name of the file as the 'key'
-// one must be logged in to view the video
-router.get('/view-video/:key', auth, (req, res) => {
-    const key = req.params.key;
-    const readStream = getFileStream(key);
+// // endpoint to display video to the client, converting binary stored on
+// // aws to the actual video. It takes in the name of the file as the 'key'
+// // one must be logged in to view the video
+// router.get('/view-video/:key', auth, (req, res) => {
+//     const key = req.params.key;
+//     const readStream = getFileStream(key);
 
-    readStream.pipe(res);
-});
+//     readStream.pipe(res);
+// });
 
 // called to store the course's metadata on the database
 // accepts an array of video metadata (url and name) and then ties
@@ -145,7 +145,7 @@ router.put('/store-user-progress', auth, async (req, res) => {
 function validateCourseForUser (courseIdBody) {
         const schema = Joi.object({
             courseId: Joi.objectId().required(),
-        })
+        });
 
         return schema.validate(courseIdBody);
 }

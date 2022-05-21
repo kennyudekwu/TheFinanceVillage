@@ -19,6 +19,7 @@
     "fawn": "^2.1.5",
     "googleapis": "^92.0.0",
     "handlebars": "^4.7.7",
+    "heroku-ssl-redirect": "^0.1.1",
     "joi": "^17.5.0",
     "joi-objectid": "^4.0.2",
     "jsonwebtoken": "^8.5.1",

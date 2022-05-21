@@ -3,8 +3,13 @@ const morgan = require('morgan');
 const winston = require('winston');
 const express = require('express');
 const app = express();
+const sslRedirect = require('heroku-ssl-redirect').default;
 
-if(app.get('env') === 'development') app.use(morgan('tiny'));
+if (app.get('env') === 'development') {
+    app.use(morgan('tiny'))
+} else {
+    app.use(sslRedirect())
+}; // enable ssl redirect
 
 require('./startup/routes')(app);
 
