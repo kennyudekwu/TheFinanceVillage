@@ -24,7 +24,10 @@ const Course = new mongoose.model('Course', new mongoose.Schema({
     // storing modules that contain videos attributed to each of them
     modules: {
     type: [new mongoose.Schema({
-        module_name: String,
+        module_name: {
+            type: String,
+            required: true
+        },
         videos: {
             type: [new mongoose.Schema({
                     // 'video_id' will be generated automatically
@@ -34,15 +37,14 @@ const Course = new mongoose.model('Course', new mongoose.Schema({
                         required: true
                     },
                     video_url: {
-                            type: String,
-                            required: true
+                        type: String,
+                        required: true
                     }
-                })]
-            },
-        default: [],
-        required: true
+                })],
+            required: true
+            }
     })],
-    default: []
+    required: true
     },
 
     discount: {
@@ -57,8 +59,13 @@ function validateCourse (course) {
         name: Joi.string().min(3).required(),
         price: Joi.number().required(),
         description: Joi.string().required(),
-        content: Joi.array().items(Joi.string())
-                .required(),
+        modules: Joi.array().items(Joi.object({
+            videos: Joi.array().items(Joi.object({
+                videoName: Joi.string().required(),
+                videoUrl: Joi.string().required()
+            }))
+        }))
+        .required(),
         discount: Joi.number().min(0.01).max(1), // 1% - 100% discount range
         video_content_id: Joi.array()
                             .items(Joi.number())

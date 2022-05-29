@@ -1,1 +1,1 @@
-web: /backend/src npm start
+web: ./backend/src npm start
