@@ -35,6 +35,7 @@ function uploadFile(file) {
 }
 
 // downloads a file from s3
+// not currently used at the moment as we are reading the data directly from aws
 function getFileStream(fileKey) {
     const downloadParams = {
         Key: fileKey,
