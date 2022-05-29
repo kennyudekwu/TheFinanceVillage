@@ -1,1 +1,1 @@
-web: ./backend/src nodemon index.js
+web: ./backend/src npm install npm start
